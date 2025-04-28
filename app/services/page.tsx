@@ -197,7 +197,6 @@ export default function ServicesPage() {
         quote:
             "No duden en regalarse este espacio, es un mimo y una lindísima forma de transitar el embarazo. Para mí fue de quietud y encuentro. Encuentro con mi bebé, con mi cuerpo cambiante, conmigo misma. Rochi habilita este espacio de manera dulce y suave, compartiendo su conocimiento sin imponer. Su acompañamiento me dio mucha tranquilidad y los movimientos que hicimos ayudaron a calmar los dolores del cuerpo propios de esta etapa.",
         name: "Justi, Nico y Simón",
-        role: "",
         image: "/chu_simon.jpg",
       },
     },
@@ -358,7 +357,6 @@ export default function ServicesPage() {
         quote:
           "Los encuentros personalizados con Rochi fueron lindísimos. Un espacio único para conectar con mi cuerpo y, sobre todo, con Elena, mi bebé. Destaco especialmente el rol y el lugar que le dio a mi marido, el papá de Elena. Los últimos encuentros compartidos fueron muy emotivos. Ojalá muchas familias tengan la suerte de ser acompañadas por ella.",
         name: "Muli, Juan y Elena",
-        role: "",
         image: "/muli_juan.jpg",
       },
     },
@@ -514,7 +512,6 @@ export default function ServicesPage() {
         quote:
           "Rochi me acompañó durante el embarazo y en mis primeros meses de lactancia. En momentos donde necesitaba contención y ayuda, siempre conté con ella, con su consejo, su aliento, su positividad y su calma.",
         name: "Male y Delfín",
-        role: "",
         image: "/male_rufo.jpg",
       },
     },
@@ -562,7 +559,7 @@ export default function ServicesPage() {
               animate={isHeaderInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Nuestros Servicios
+              Planes
             </motion.div>
             <motion.h1
               className="mb-4 text-4xl text-neutral-900 sm:text-5xl md:text-6xl"
@@ -793,7 +790,7 @@ export default function ServicesPage() {
               <div className="mx-auto max-w-3xl text-center">
                 <div className="mb-8 flex justify-center">
                   {/* Larger avatar container with simple design */}
-                  <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-md">
+                  <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-full border-4 border-white shadow-md">
                     <Image
                       src={service.testimonial.image || "/placeholder.svg"}
                       alt={service.testimonial.name}
@@ -803,10 +800,9 @@ export default function ServicesPage() {
                     />
                   </div>
                 </div>
-                <p className="mb-6 text-xl italic leading-relaxed text-neutral-700">{service.testimonial.quote}</p>
+                <p className="mb-6 text-lg md:text-xl italic leading-relaxed text-neutral-700">{service.testimonial.quote}</p>
                 <div className="text-center">
-                  <p className="text-neutral-900">{service.testimonial.name}</p>
-                  <p className="text-sm text-orange-500">{service.testimonial.role}</p>
+                  <p className="text-orange-500">{service.testimonial.name}</p>
                 </div>
               </div>
             </motion.div>
@@ -824,7 +820,7 @@ export default function ServicesPage() {
                 <Accordion type="single" collapsible className="w-full">
                   {service.faqs.map((faq, index) => (
                     <AccordionItem key={index} value={`item-${index}`}>
-                      <AccordionTrigger className="text-left text-lg font-medium text-neutral-900">
+                      <AccordionTrigger className="text-left text-lg font-light text-neutral-900">
                         {faq.question}
                       </AccordionTrigger>
                       <AccordionContent className="text-neutral-600">{faq.answer}</AccordionContent>
@@ -847,7 +843,7 @@ export default function ServicesPage() {
                 Reserva una consulta para hablar sobre cómo puedo acompañarte en tu {service.title.toLowerCase()}.
               </p>
               <Button
-                className="rounded-full bg-white px-8 py-3 text-lg font-medium text-orange-500 hover:bg-white/90"
+                className="rounded-full bg-white px-8 py-3 text-lg font-light text-orange-500 hover:bg-white/90"
                 asChild
               >
                 <Link href="#contact">Reservar Consulta</Link>

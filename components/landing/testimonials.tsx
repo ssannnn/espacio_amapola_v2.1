@@ -152,7 +152,7 @@ export default function Testimonials() {
                 {/* Top section with image and category */}
                 <div className="flex items-center justify-between bg-gradient-to-r from-orange-100 to-orange-50 p-4 md:transition-all md:duration-500 md:hover:from-orange-200 md:hover:to-orange-100">
                   <div className="flex items-center gap-4">
-                    <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-white shadow-md sm:h-20 sm:w-20 md:transition-all md:duration-300 md:hover:scale-105">
+                    <div className="relative h-16 w-16 md:h-24 md:w-24 overflow-hidden rounded-full border-2 border-white shadow-md sm:h-20 sm:w-20 md:transition-all md:duration-300 md:hover:scale-105">
                       <Image
                         src={testimonials[activeIndex].avatar || "/placeholder.svg"}
                         alt={testimonials[activeIndex].name}

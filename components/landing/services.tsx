@@ -58,11 +58,11 @@ export default function Services() {
             />
 
             {/* Semi-transparent overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
 
             <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
               <div className="flex justify-between">
-                <h3 className="text-3xl">Habitando mi Cuerpo</h3>
+                <h3 className="text-2xl md:text-3xl">Habitando mi Cuerpo</h3>
 
                 {/* Location indicator */}
                 <div className="flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm backdrop-blur-sm">
@@ -88,7 +88,7 @@ export default function Services() {
               <div className="flex flex-col gap-6 md:flex-row md:items-end">
                 {/* Content area - reduced width to accommodate larger map */}
                 <div className="flex-1 md:max-w-[50%]">
-                  <p className="mb-6 text-xl text-neutral-200">
+                  <p className="mb-6 text-base md:text-lg text-neutral-200">
                     Trabajamos con movimientos suaves y conscientes para aliviar tensiones, desde la esferodinamia, el
                     método de Frida Kaplan y visualizaciones, para conectar con tu bebé y preparar tu cuerpo para el
                     trabajo de parto y parto.
@@ -99,7 +99,7 @@ export default function Services() {
                 </div>
 
                 {/* Larger mini-map placeholder */}
-                <div className="h-[220px] w-full flex-shrink-0 overflow-hidden rounded-xl border-2 border-white/20 shadow-lg md:h-[260px] md:w-[400px]">
+                <div className="hidden md:block h-[220px] w-full flex-shrink-0 overflow-hidden rounded-xl border-2 border-white/20 shadow-lg md:h-[260px] md:w-[400px]">
                   <div className="relative h-full w-full">
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.3621877118485!2d-58.39700882345722!3d-34.595001857039435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccabdf541ca19%3A0xc3896c970fe9063a!2sArenales%201900%2C%20C1216%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1745770561898!5m2!1ses!2sar"
@@ -131,9 +131,9 @@ export default function Services() {
             <div key={index} className="group relative">
               <div className="relative h-80 overflow-hidden rounded-3xl shadow-lg">
                 <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
                 <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
-                  <h3 className="text-xl">{service.title}</h3>
+                  <h3 className="text-xl md:text-2xl">{service.title}</h3>
                   <div>
                     <p className="mb-4 text-neutral-200">{service.description}</p>
                     <button className="rounded-full bg-orange-500 px-4 py-2 text-sm text-white hover:bg-orange-600">

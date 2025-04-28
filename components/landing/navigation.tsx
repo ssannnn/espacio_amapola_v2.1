@@ -18,13 +18,13 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const menuItems = ["Inicio", "Servicios", "Testimonios", "Sobre Mí", "Preguntas Frecuentes", "Contacto"]
+  const menuItems = ["Inicio", "Planes", "Testimonios", "Sobre Mí", "Preguntas Frecuentes", "Contacto"]
 
   const scrollToSection = (section: string) => {
     setIsOpen(false)
 
     // If it's the Services item, navigate directly to the services page
-    if (section.toLowerCase() === "servicios") {
+    if (section.toLowerCase() === "planes") {
       window.location.href = "/services"
       return
     }
@@ -32,7 +32,7 @@ export default function Navigation() {
     // Map Spanish section names to English IDs
     const sectionMap: Record<string, string> = {
       inicio: "home",
-      servicios: "services",
+      planes: "services",
       "sobre mí": "about",
       testimonios: "testimonials",
       preguntas: "faq",
@@ -78,13 +78,13 @@ export default function Navigation() {
                 <Image
                   src="/logo_s.png"
                   alt="logo"
-                  width="32"
-                  height="32"                   
+                  width="24"
+                  height="24"                   
                   className="h-[1.2em] w-[1.2em]"
                   aria-hidden="true"                     
                 /> 
               </div>
-              <span className="font-display tracking-wide">Espacio Amapola</span>
+              <span className="font-display font-light tracking-wide text-sm md:text-xl">Espacio Amapola</span>
             </Link>
           </motion.div>
 
