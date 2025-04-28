@@ -152,10 +152,10 @@ export default function Footer() {
             <ul className="space-y-3 font-sans">
               {[
                 { name: "Inicio", path: "/" },
-                { name: "Servicios", path: "/services" },
+                { name: "Planes", path: "/services" },
                 { name: "Sobre Mí", path: "/#about" },
                 { name: "Testimonios", path: "/#testimonials" },
-                { name: "Preguntas", path: "/#faq" },
+                { name: "Preguntas Frecuentes", path: "/#faq" },
                 { name: "Contacto", path: "/#contact" },
               ].map((item, index) => (
                 <motion.li
