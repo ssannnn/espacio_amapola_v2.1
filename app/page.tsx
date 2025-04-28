@@ -9,6 +9,7 @@ import Contact from "@/components/landing/contact"
 import Footer from "@/components/landing/footer"
 import Navigation from "@/components/landing/navigation"
 import WhatsAppButton from "@/components/landing/whatsapp-button"
+import ScrollToTop from "@/components/landing/scroll-to-top"
 import { motion } from "framer-motion"
 
 // Animation variants for desktop only
@@ -96,6 +97,7 @@ export default function Home() {
         </div>
 
         <Footer />
+        <ScrollToTop />
       </div>
     </main>
   )
