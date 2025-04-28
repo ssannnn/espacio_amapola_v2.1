@@ -84,7 +84,7 @@ export default function Navigation() {
                   aria-hidden="true"                     
                 /> 
               </div>
-              <span className="font-display font-light tracking-wide text-sm md:text-xl">Espacio Amapola</span>
+              <span className="hidden md:block md:text-xl font-display font-light tracking-wide">Espacio Amapola</span>
             </Link>
           </motion.div>
 
