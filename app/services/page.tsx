@@ -559,7 +559,7 @@ export default function ServicesPage() {
               animate={isHeaderInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Planes
+              Propuestas
             </motion.div>
             <motion.h1
               className="mb-4 text-4xl text-neutral-900 sm:text-5xl md:text-6xl"

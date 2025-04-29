@@ -18,13 +18,13 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const menuItems = ["Inicio", "Planes", "Testimonios", "Sobre Mí", "Preguntas Frecuentes", "Contacto"]
+  const menuItems = ["Inicio", "Propuestas", "Testimonios", "Sobre Mí", "Preguntas Frecuentes", "Contacto"]
 
   const scrollToSection = (section: string) => {
     setIsOpen(false)
 
     // If it's the Services item, navigate directly to the services page
-    if (section.toLowerCase() === "planes") {
+    if (section.toLowerCase() === "propuestas") {
       window.location.href = "/services"
       return
     }
@@ -32,7 +32,7 @@ export default function Navigation() {
     // Map Spanish section names to English IDs
     const sectionMap: Record<string, string> = {
       inicio: "home",
-      planes: "services",
+      propuestas: "services",
       "sobre mí": "about",
       testimonios: "testimonials",
       preguntas: "faq",

@@ -152,7 +152,7 @@ export default function Footer() {
             <ul className="space-y-3 font-sans">
               {[
                 { name: "Inicio", path: "/" },
-                { name: "Planes", path: "/services" },
+                { name: "Propuestas", path: "/services" },
                 { name: "Sobre Mí", path: "/#about" },
                 { name: "Testimonios", path: "/#testimonials" },
                 { name: "Preguntas Frecuentes", path: "/#faq" },
