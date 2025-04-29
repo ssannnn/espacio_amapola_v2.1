@@ -1041,18 +1041,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
-      {/* Back to Home */}
-      <div className="bg-neutral-50 pb-16 text-center">
-        <Button
-          variant="outline"
-          className="rounded-full border-2 border-orange-500 px-6 py-3 text-orange-500 hover:bg-orange-50"
-          asChild
-        >
-          <Link href="/">Volver al Inicio</Link>
-        </Button>
-      </div>
-
       <Footer />
       <ScrollToTop />
     </main>
