@@ -36,9 +36,6 @@ export default function Services() {
     >
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600">
-            Mis Servicios
-          </span>
           <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Acompañamiento Integral</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
             Te acompaño durante todo el proceso, desde el embarazo hasta el postparto, con servicios personalizados

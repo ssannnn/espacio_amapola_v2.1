@@ -43,7 +43,7 @@ export default function Hero() {
       src: "/hero_22.webp",
       alt: "Mother and baby",
       color: "from-orange-400/40 to-transparent",
-      shape: "rounded-full", // Circular image
+      shape: "rounded-xl", 
     },
     {
       src: "/hero_33.webp",
