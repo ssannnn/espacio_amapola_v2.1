@@ -40,20 +40,6 @@ export default function Home() {
           <Services />
         </div>
 
-        {/* About section with desktop-only animations */}
-        <motion.div
-          className="hidden md:block" // Only apply animation container on desktop
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <About />
-        </motion.div>
-        <div className="md:hidden">
-          <About />
-        </div>
-
         {/* Testimonials section with desktop-only animations */}
         <motion.div
           className="hidden md:block" // Only apply animation container on desktop
@@ -68,6 +54,21 @@ export default function Home() {
           <Testimonials />
         </div>
 
+        {/* About section with desktop-only animations */}
+        <motion.div
+          className="hidden md:block" // Only apply animation container on desktop
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <About />
+        </motion.div>
+        <div className="md:hidden">
+          <About />
+        </div>
+
+     
         {/* FAQ section with desktop-only animations */}
         <motion.div
           className="hidden md:block" // Only apply animation container on desktop
