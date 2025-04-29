@@ -131,7 +131,7 @@ export default function ServicesPage() {
       pricing: [
         {
           title: "Camino al Encuentro",
-          price: "$140.000",
+          //price: "$140.000",
           description: "Propuesta integral para prepararse para el trabajo de parto, parto y la vuelta a casa",
           included: [
             "4 encuentros de 1 hora",
@@ -143,7 +143,7 @@ export default function ServicesPage() {
         },
         {
           title: "Habitando mi Cuerpo",
-          price: "$130.000",
+          //price: "$130.000",
           description: "Movimientos suaves y conscientes para aliviar tensiones y preparar tu cuerpo",
           included: [
             "A partir de la semana 14 de embarazo",
@@ -158,7 +158,7 @@ export default function ServicesPage() {
         },
         {
           title: "El Arte de Amamantar",
-          price: "$35.000",
+          //price: "$35.000",
           description: "Charla sobre lactancia y técnicas de amamantamiento",
           included: [
             "1 o 2 encuentros",
@@ -303,7 +303,7 @@ export default function ServicesPage() {
       pricing: [
         {
           title: "Camino al Encuentro",
-          price: "$140.000",
+          //price: "$140.000",
           description:
             "Propuesta integral para prepararse en pareja para el trabajo de parto, parto y la vuelta a casa",
           included: [
@@ -318,7 +318,7 @@ export default function ServicesPage() {
         },
         {
           title: "El Arte de Amamantar",
-          price: "$35.000",
+          //price: "$35.000",
           description: "Charla sobre lactancia y técnicas de amamantamiento para ambos",
           included: [
             "1 o 2 encuentros",
@@ -462,7 +462,7 @@ export default function ServicesPage() {
       pricing: [
         {
           title: "Asesorías en Lactancia",
-          price: "$60.000",
+          //price: "$60.000",
           description: "Espacio personalizado para acompañarte cuando ya nació tu bebé",
           included: [
             "Duración de 1 a 3 horas",
@@ -475,7 +475,7 @@ export default function ServicesPage() {
         },
         {
           title: "Destete",
-          price: "$45.000",
+          //price: "$45.000",
           description: "Acompañamiento para transitar el destete de forma respetuosa",
           included: [
             "1 encuentro de 1 hora",
