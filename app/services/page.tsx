@@ -684,37 +684,7 @@ export default function ServicesPage() {
               </motion.div>
             </div>
 
-            {/* Service Features */}
-            <motion.div
-              className="mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Qué Incluye</h3>
-              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                {service.features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    className="rounded-xl bg-white p-6 shadow-md"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -5, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
-                  >
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
-                      {feature.icon}
-                    </div>
-                    <h4 className="mb-2 text-lg text-neutral-900">{feature.title}</h4>
-                    <p className="text-neutral-600">{feature.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Pricing Section */}
+            {/* Plan details cards Section */}
             <motion.div
               className="mb-16"
               initial={{ opacity: 0, y: 30 }}
@@ -778,6 +748,37 @@ export default function ServicesPage() {
                 ))}
               </div>
             </motion.div>
+
+            {/* Service Features */}
+            <motion.div
+              className="mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Qué Incluye</h3>
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                {service.features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    className="rounded-xl bg-white p-6 shadow-md"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
+                  >
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
+                      {feature.icon}
+                    </div>
+                    <h4 className="mb-2 text-lg text-neutral-900">{feature.title}</h4>
+                    <p className="text-neutral-600">{feature.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
 
             {/* Testimonial */}
             <motion.div
