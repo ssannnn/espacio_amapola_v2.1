@@ -27,7 +27,7 @@ export default function ServicesPage() {
       subtitle: "Acompañamiento durante el embarazo",
       description:
         "Propuestas integrales para acompañarte durante el embarazo, prepararte para el parto y conectar con tu bebé a través de diferentes técnicas y recursos.",
-      image: "/prenatal.jpg",
+      image: "/prenatal_1.webp",
       features: [
         {
           title: "Información Personalizada",
@@ -197,7 +197,7 @@ export default function ServicesPage() {
         quote:
             "No duden en regalarse este espacio, es un mimo y una lindísima forma de transitar el embarazo. Para mí fue de quietud y encuentro. Encuentro con mi bebé, con mi cuerpo cambiante, conmigo misma. Rochi habilita este espacio de manera dulce y suave, compartiendo su conocimiento sin imponer. Su acompañamiento me dio mucha tranquilidad y los movimientos que hicimos ayudaron a calmar los dolores del cuerpo propios de esta etapa.",
         name: "Justi, Nico y Simón",
-        image: "/chu_simon.jpg",
+        image: "/chu_simon.webp",
       },
     },
     {
@@ -206,7 +206,7 @@ export default function ServicesPage() {
       subtitle: "Preparación para recibir a tu bebé junto a tu acompañante",
       description:
         "Propuestas diseñadas para que junto a tu pareja o acompañante se preparen para la llegada del bebé, fortaleciendo el vínculo y aprendiendo juntos sobre el proceso.",
-      image: "/en_pareja.png",
+      image: "/en_pareja_1.webp",
       features: [
         {
           title: "Preparación Conjunta",
@@ -357,7 +357,7 @@ export default function ServicesPage() {
         quote:
           "Los encuentros personalizados con Rochi fueron lindísimos. Un espacio único para conectar con mi cuerpo y, sobre todo, con Elena, mi bebé. Destaco especialmente el rol y el lugar que le dio a mi marido, el papá de Elena. Los últimos encuentros compartidos fueron muy emotivos. Ojalá muchas familias tengan la suerte de ser acompañadas por ella.",
         name: "Muli, Juan y Elena",
-        image: "/muli_juan.jpg",
+        image: "/muli_juan.webp",
       },
     },
     {
@@ -366,7 +366,7 @@ export default function ServicesPage() {
       subtitle: "Acompañamiento después del nacimiento",
       description:
         "Apoyo especializado para el período posterior al nacimiento, enfocado en la lactancia y el destete respetuoso, adaptado a las necesidades de cada familia.",
-      image: "/postparto.jpg",
+      image: "/postparto_1.webp",
       features: [
         {
           title: "Asesoría en Lactancia",
@@ -512,7 +512,7 @@ export default function ServicesPage() {
         quote:
           "Rochi me acompañó durante el embarazo y en mis primeros meses de lactancia. En momentos donde necesitaba contención y ayuda, siempre conté con ella, con su consejo, su aliento, su positividad y su calma.",
         name: "Male y Delfín",
-        image: "/male_rufo.jpg",
+        image: "/male_rufo.webp",
       },
     },
   ]

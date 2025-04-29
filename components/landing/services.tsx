@@ -10,18 +10,18 @@ const services = [
     title: "Prenatal",
     description:
       "Propuestas integrales para acompañarte durante el embarazo, prepararte para el parto y conectar con tu bebé.",
-    image: "/prenatal.jpg",
+    image: "/prenatal_1.webp",
   },
   {
     title: "En Pareja",
     description: "Preparación para recibir a tu bebé junto a tu pareja o acompañante, fortaleciendo el vínculo.",
-    image: "/en_pareja.png",
+    image: "/en_pareja_1.webp",
   },
   {
     title: "Postparto",
     description:
       "Apoyo especializado para el período posterior al nacimiento, enfocado en la lactancia y el destete.",
-    image: "/postparto.jpg",
+    image: "/postparto_1.webp",
   },
 ]
 
@@ -51,7 +51,7 @@ export default function Services() {
           <div className="relative h-96 overflow-hidden rounded-3xl shadow-xl">
             {/* Background image */}
             <Image
-              src="/place.png"
+              src="/place_1.webp"
               alt="Acompañamiento Integral"
               fill
               className="object-cover"
@@ -109,7 +109,7 @@ export default function Services() {
                       allowFullScreen={false}
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Ubicación: Ayacucho y Juncal, CABA"
+                      title="Ubicación: Arenales 1900, CABA"
                       className="absolute inset-0"
                     ></iframe>
 

@@ -34,25 +34,25 @@ export default function Hero() {
   // Borderless images with varied sizes and asymmetrical distribution
   const images = [
     {
-      src: "/hero_1.jpeg",
+      src: "/hero_11.webp",
       alt: "Pregnant woman",
       color: "from-orange-300/40 to-transparent",
       shape: "rounded-xl",
     },
     {
-      src: "/hero_4.jpeg",
+      src: "/hero_22.webp",
       alt: "Mother and baby",
       color: "from-orange-400/40 to-transparent",
       shape: "rounded-full", // Circular image
     },
     {
-      src: "/hero_2.jpeg",
+      src: "/hero_33.webp",
       alt: "Family",
       color: "from-orange-500/40 to-transparent",
       shape: "rounded-lg",
     },
     {
-      src: "/hero_3.jpeg",
+      src: "/hero_44.webp",
       alt: "Newborn",
       color: "from-orange-600/40 to-transparent",
       shape: "rounded-2xl",
