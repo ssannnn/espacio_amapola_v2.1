@@ -160,7 +160,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg text-neutral-900">Envíame un e-mail</h3>
                   <p className="mt-1 text-neutral-600">
-                    info@maternitycare.example
+                    espacioamapola@hotmail.com
                     <br />
                   </p>
                 </div>
