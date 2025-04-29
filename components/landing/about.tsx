@@ -28,7 +28,7 @@ export default function About() {
           {/* Section header */}
           <div className="mb-12 text-center">
             <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600">
-              Mi Historia
+              Sobre mi
             </span>
             <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Hola! Soy Rochi</h2>
           </div>

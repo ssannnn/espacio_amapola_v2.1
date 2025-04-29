@@ -791,7 +791,7 @@ export default function ServicesPage() {
               <div className="mx-auto max-w-3xl text-center">
                 <div className="mb-8 flex justify-center">
                   {/* Larger avatar container with simple design */}
-                  <div className="relative h-32 w-32 md:h-40 md:w-40 overflow-hidden rounded-full border-4 border-white shadow-md">
+                  <div className="relative h-24 w-24 md:h-40 md:w-40 overflow-hidden rounded-full border-4 border-white shadow-md">
                     <Image
                       src={service.testimonial.image || "/placeholder.svg"}
                       alt={service.testimonial.name}
