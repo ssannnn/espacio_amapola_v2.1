@@ -153,7 +153,7 @@ export default function Footer() {
               {[
                 { name: "Inicio", path: "/" },
                 { name: "Propuestas", path: "/services" },
-                { name: "Sobre Mí", path: "/#about" },
+                { name: "Sobre mí", path: "/#about" },
                 { name: "Testimonios", path: "/#testimonials" },
                 { name: "Preguntas Frecuentes", path: "/#faq" },
                 { name: "Contacto", path: "/#contact" },

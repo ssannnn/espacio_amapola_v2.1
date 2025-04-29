@@ -96,14 +96,6 @@ export default function Contact() {
           >
             Contactame
           </motion.h2>
-          <motion.p
-            className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            Estoy aquí para responder tus preguntas y brindarte el apoyo que necesitas
-          </motion.p>
         </motion.div>
 
         <div className="mx-auto grid max-w-4xl gap-8 lg:grid-cols-2">

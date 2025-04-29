@@ -18,7 +18,7 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const menuItems = ["Inicio", "Propuestas", "Testimonios", "Sobre Mí", "Preguntas Frecuentes", "Contacto"]
+  const menuItems = ["Inicio", "Propuestas", "Testimonios", "Sobre mí", "Preguntas Frecuentes", "Contacto"]
 
   const scrollToSection = (section: string) => {
     setIsOpen(false)
