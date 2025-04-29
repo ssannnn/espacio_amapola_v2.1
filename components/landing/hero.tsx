@@ -37,19 +37,19 @@ export default function Hero() {
       src: "/hero_11.webp",
       alt: "Pregnant woman",
       color: "from-orange-300/40 to-transparent",
-      shape: "rounded-xl",
+      shape: "rounded-2xl",
     },
     {
       src: "/hero_22.webp",
       alt: "Mother and baby",
       color: "from-orange-400/40 to-transparent",
-      shape: "rounded-xl", 
+      shape: "rounded-2xl", 
     },
     {
       src: "/hero_33.webp",
       alt: "Family",
       color: "from-orange-500/40 to-transparent",
-      shape: "rounded-lg",
+      shape: "rounded-2xl",
     },
     {
       src: "/hero_44.webp",
