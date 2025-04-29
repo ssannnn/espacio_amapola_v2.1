@@ -46,7 +46,7 @@ export default function About() {
                 <div className="absolute left-1/2 top-1/2 aspect-square w-[80%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full shadow-xl">
                   <div className="relative h-full w-full">
                     <Image
-                      src="/profile_2.webp"
+                      src="/profile_3.webp"
                       alt="Rochi - Doula y Puericultora"
                       fill
                       className="object-cover"
