@@ -712,7 +712,7 @@ export default function ServicesPage() {
                       </span>
                     )}
                     <h4 className="mb-2 text-xl text-neutral-900">{plan.title}</h4>
-                    <p className="mb-4 text-3xl text-orange-500">{plan.price}</p>
+                    <p className="mb-4 text-3xl text-orange-500">{}</p>
                     <p className="mb-6 text-neutral-600">{plan.description}</p>
                     <div className="mb-6 flex-grow">
                       <p className="mb-2 font-medium text-neutral-900">Incluye:</p>
