@@ -35,7 +35,7 @@ export default function Navigation() {
       propuestas: "services",
       "sobre mí": "about",
       testimonios: "testimonials",
-      preguntas: "faq",
+      "preguntas frecuentes": "faq",
       contacto: "contact",
     }
 
