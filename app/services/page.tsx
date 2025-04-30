@@ -692,7 +692,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Opciones y Precios</h3>
+              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Opciones</h3>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {service.pricing.map((plan, index) => (
                   <motion.div
