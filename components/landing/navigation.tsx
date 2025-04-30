@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { navSlide } from "@/lib/motion"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -59,12 +60,10 @@ export default function Navigation() {
   return (
     <>
       <motion.nav
-        className={`fixed left-0 top-0 z-40 w-full ${
-          scrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"
-        } transition-all duration-300`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        {...navSlide}
+        className={`fixed left-0 top-0 z-40 w-full 
+          ${scrolled ? "bg-white/80 backdrop-blur-md" : "bg-transparent"}
+          transition-all duration-300`}
       >
         <div className="container mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <motion.div
