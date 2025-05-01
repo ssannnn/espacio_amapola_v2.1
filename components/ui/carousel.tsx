@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import useCarousel from "@/hooks/useCarousel"
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react"
@@ -30,17 +31,9 @@ type CarouselContextProps = {
   canScrollNext: boolean
 } & CarouselProps
 
-const CarouselContext = React.createContext<CarouselContextProps | null>(null)
+export const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel() {
-  const context = React.useContext(CarouselContext)
-
-  if (!context) {
-    throw new Error("useCarousel must be used within a <Carousel />")
-  }
-
-  return context
-}
+useCarousel()
 
 const Carousel = React.forwardRef<
   HTMLDivElement,
