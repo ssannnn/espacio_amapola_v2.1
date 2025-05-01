@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
+const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL
+
 export default function Footer() {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
@@ -95,10 +97,10 @@ export default function Footer() {
               camino de embarazo y más allá.
             </p>
             <div className="flex space-x-4">
-              
+                {/* Instagram link */}
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
                   <Link
-                    href="#"
+                    href={instagramUrl}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200"
                     aria-label={`Follow us on ${"Instagram"}`}
                   >
