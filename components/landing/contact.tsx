@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""
 
 const whatsappHref = `https://wa.me/${whatsappNumber}`
 

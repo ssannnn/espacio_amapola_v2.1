@@ -12,7 +12,7 @@ import Footer from "@/components/landing/footer"
 import WhatsAppButton from "@/components/landing/whatsapp-button"
 import ScrollToTop from "@/components/landing/scroll-to-top"
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""
 
 const whatsappHref = `https://wa.me/${whatsappNumber}`
 
