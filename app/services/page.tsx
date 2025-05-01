@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView } from "framer-motion"
@@ -15,6 +15,11 @@ import WhatsAppButton from "@/components/landing/whatsapp-button"
 import ScrollToTop from "@/components/landing/scroll-to-top"
 
 export default function ServicesPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [activeTab, setActiveTab] = useState("prenatal")
   const headerRef = useRef(null)
   const isHeaderInView = useInView(headerRef, { once: false, amount: 0.2 })
