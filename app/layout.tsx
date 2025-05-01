@@ -4,12 +4,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata = {
   title: "Espacio Amapola",
-  description: "Atención personalizada para madres y padres que esperan un hijo.",
+  description: "Abrazá tu maternidad",
   // Add the Google Fonts links to the metadata
  // metadataBase: new URL(""),
   openGraph: {
     title: "Espacio Amapola",
-    description: "Atención personalizada para madres y padres que esperan un hijo.",
+    description: "Abrazá tu maternidad",
     //url: "",
     siteName: "Espacio Amapola",
   },
