@@ -3,6 +3,10 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+
+const whatsappHref = `https://wa.me/${whatsappNumber}`
+
 export default function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false)
   const [isTooltipVisible, setIsTooltipVisible] = useState(false)
@@ -37,7 +41,7 @@ export default function WhatsAppButton() {
             onMouseLeave={() => setIsTooltipVisible(false)}
           >
             <motion.a
-              href="https://wa.me/"
+              href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#20BD5C]"
