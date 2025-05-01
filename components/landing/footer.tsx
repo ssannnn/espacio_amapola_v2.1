@@ -9,7 +9,9 @@ import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL
+const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL  ?? ""
+
+const instagramHref = instagramUrl
 
 export default function Footer() {
   const [email, setEmail] = useState("")
@@ -100,7 +102,7 @@ export default function Footer() {
                 {/* Instagram link */}
                 <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
                   <Link
-                    href={instagramUrl}
+                    href={instagramHref}
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200"
                     aria-label={`Follow us on ${"Instagram"}`}
                   >
