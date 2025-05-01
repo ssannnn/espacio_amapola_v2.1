@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL
+const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL  ?? ""
 
 const instagramHref = instagramUrl
 

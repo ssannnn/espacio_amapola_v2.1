@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { menuItems } from "./menuItems"
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL
+const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? ""
 
 const instagramHref = instagramUrl
 
