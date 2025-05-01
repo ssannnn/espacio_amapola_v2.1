@@ -9,6 +9,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { motion, useInView, useScroll, useTransform } from "framer-motion"
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+
+const whatsappHref = `https://wa.me/${whatsappNumber}`
+
 export default function Contact() {
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.2 })
@@ -126,7 +130,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg text-neutral-900">WhatsApp (Preferido)</h3>
                   <a
-                    href="https://wa.me/"
+                    href={whatsappHref}
                     className="mt-1 text-[#25D366] font-medium hover:text-[#128C7E] transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -349,7 +353,7 @@ export default function Contact() {
                       asChild
                     >
                       <a
-                        href="https://wa.me/"
+                        href={whatsappHref}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2"

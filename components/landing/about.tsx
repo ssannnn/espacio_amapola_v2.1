@@ -121,7 +121,7 @@ export default function About() {
                     className="rounded-full bg-orange-500 px-6 py-6 text-white hover:bg-orange-600 md:transition-all md:duration-300 md:hover:scale-105"
                     asChild
                   >
-                    <a href="#services" className="flex items-center gap-2">
+                    <a href="/services" className="flex items-center gap-2">
                       <span>Conoce las propuestas</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

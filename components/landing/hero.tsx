@@ -153,7 +153,7 @@ export default function Hero() {
               className="w-fit rounded-full border-2 border-orange-500 px-6 py-3 text-orange-500 hover:bg-orange-50"
               asChild
             >
-              <motion.a href="#about" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.a href="/services" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 Quiero saber más
               </motion.a>
             </Button>

@@ -3,6 +3,7 @@
 import * as React from "react"
 import * as RechartsPrimitive from "recharts"
 
+import useChart from "@/hooks/useChart"
 import { cn } from "@/lib/utils"
 
 // Format: { THEME_NAME: CSS_SELECTOR }
@@ -22,17 +23,9 @@ type ChartContextProps = {
   config: ChartConfig
 }
 
-const ChartContext = React.createContext<ChartContextProps | null>(null)
+export const ChartContext = React.createContext<ChartContextProps | null>(null)
 
-function useChart() {
-  const context = React.useContext(ChartContext)
-
-  if (!context) {
-    throw new Error("useChart must be used within a <ChartContainer />")
-  }
-
-  return context
-}
+useChart() 
 
 const ChartContainer = React.forwardRef<
   HTMLDivElement,

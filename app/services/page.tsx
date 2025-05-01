@@ -1,20 +1,27 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-
-// Add imports for Navigation, Footer, and WhatsAppButton at the top of the file
 import Navigation from "@/components/landing/navigation"
 import Footer from "@/components/landing/footer"
 import WhatsAppButton from "@/components/landing/whatsapp-button"
 import ScrollToTop from "@/components/landing/scroll-to-top"
 
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+
+const whatsappHref = `https://wa.me/${whatsappNumber}`
+
 export default function ServicesPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const [activeTab, setActiveTab] = useState("prenatal")
   const headerRef = useRef(null)
   const isHeaderInView = useInView(headerRef, { once: false, amount: 0.2 })
@@ -648,7 +655,7 @@ export default function ServicesPage() {
                     asChild
                   >
                     <a
-                      href="https://wa.me/"
+                      href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2"
@@ -927,7 +934,7 @@ export default function ServicesPage() {
                 <div className="flex justify-center">
                   <Button className="w-full rounded-full bg-white px-6 py-3 text-[#25D366] hover:bg-white/90" asChild>
                     <a
-                      href="https://wa.me/"
+                      href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2"
