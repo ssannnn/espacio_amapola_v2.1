@@ -7,6 +7,8 @@ import { menuItems } from "./menuItems"
 
 const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL
 
+const instagramHref = instagramUrl
+
 export default function MobileMenu({
   isOpen,
   onSelect,
@@ -80,7 +82,7 @@ export default function MobileMenu({
           >
             {/* Instagram */}
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-              <Link href={instagramUrl} aria-label="instagram" className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200">
+              <Link href={instagramHref} aria-label="instagram" className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200">
               <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="30"
