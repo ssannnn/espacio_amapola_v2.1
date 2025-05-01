@@ -82,23 +82,29 @@ export default function MobileMenu({
           >
             {/* Instagram */}
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-              <Link href={instagramHref} aria-label="instagram" className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200">
+            <a
+              href={instagramHref}
+              aria-label="instagram"
+              className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="30"
-                          height="30"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
-              </Link>
+            </a>
             </motion.div>
           </motion.div>
         </motion.div>
