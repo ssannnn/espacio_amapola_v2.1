@@ -16,7 +16,9 @@ export default function MobileMenu({
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-30 flex items-center justify-center bg-gradient-to-b from-orange-50 to-white overflow-hidden"
+          className="fixed inset-0 h-screen w-screen z-30
+            flex flex-col justify-between items-center
+            bg-gradient-to-b from-orange-50 to-white"
           initial={{ opacity: 0, clipPath: "circle(0% at 90% 10%)" }}
           animate={{ opacity: 1, clipPath: "circle(150% at 90% 10%)" }}
           exit={{ opacity: 0, clipPath: "circle(0% at 90% 10%)" }}
@@ -41,7 +43,7 @@ export default function MobileMenu({
 
           {/* Logo */}
           <motion.div
-            className="mb-8 text-center"
+            className="mt-24"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -52,11 +54,11 @@ export default function MobileMenu({
           </motion.div>
 
           {/* Links */}
-          <div className="relative z-10 flex flex-col items-center space-y-6 text-center">
+          <div className="flex-1 flex flex-col items-center justify-center space-y-6 text-center">
             {menuItems.map(({ id, label, href }) => (
               <motion.div key={id} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                <Link href={href} scroll={false} onClick={onSelect}>
-                  <span className="relative text-3xl text-neutral-800 hover:text-orange-500 font-display tracking-wide">
+                <Link href={href} scroll={true} onClick={onSelect}>
+                  <span className="relative text-3xl text-neutral-600 font-display tracking-wide">
                     {label}
                     <span
                       className="absolute -bottom-2 left-0 h-1 w-0 bg-orange-500 transition-all duration-300"
@@ -69,27 +71,29 @@ export default function MobileMenu({
 
           {/* Social Icons */}
           <motion.div
-            className="mt-12 flex space-x-4"
+            className="mb-40 flex"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            {/* Facebook */}
-            <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-              <Link href="#" aria-label="facebook" className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                </svg>
-              </Link>
-            </motion.div>
             {/* Instagram */}
             <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
-              <Link href="#" aria-label="instagram" className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 text-orange-500 hover:bg-orange-200">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <circle cx="17.5" cy="6.5" r="0.5" />
-                </svg>
+              <Link href="#" aria-label="instagram" className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-100 text-orange-500 transition-colors hover:bg-orange-200">
+              <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="30"
+                          height="30"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
               </Link>
             </motion.div>
           </motion.div>

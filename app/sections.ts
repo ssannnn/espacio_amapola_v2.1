@@ -14,10 +14,10 @@ export interface SectionItem {
 }
 
 export const sections: SectionItem[] = [
-  { id: "home",         label: "Inicio",              Component: Hero },
-  { id: "services",     label: "Propuestas",          Component: Services },
-  { id: "testimonials", label: "Testimonios",         Component: Testimonials },
-  { id: "about",        label: "Sobre mí",            Component: About },
+  { id: "inicio",         label: "Inicio",              Component: Hero },
+  { id: "propuestas",     label: "Propuestas",          Component: Services },
+  { id: "testimonios", label: "Testimonios",         Component: Testimonials },
+  { id: "sobre_mi",        label: "Sobre mí",            Component: About },
   { id: "faq",          label: "Preguntas Frecuentes", Component: FAQ },
-  { id: "contact",      label: "Contacto",            Component: Contact },
+  { id: "contacto",      label: "Contacto",            Component: Contact },
 ]

@@ -6,6 +6,6 @@ import { sections } from "@/app/sections"
  */
 
 export const menuItems = sections.map(({ id, label }) => {
-  const href = id === "services" ? "/services" : `/#${id}`
+  const href = id === "propuestas" ? "/services" : `/#${id}`
   return { id, label, href }
 })

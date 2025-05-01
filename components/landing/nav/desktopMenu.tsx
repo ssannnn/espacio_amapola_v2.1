@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { menuItems } from "./menuItems"
 
 export default function DesktopMenu({ onSelect }: { onSelect?: () => void }) {
   const handleClick = () => onSelect?.()
+  const pathname = usePathname()
+  const isActive = (href: string) => pathname === href
 
   return (
     <div className="hidden md:flex md:items-center md:space-x-8">
@@ -17,11 +20,14 @@ export default function DesktopMenu({ onSelect }: { onSelect?: () => void }) {
           whileTap={{ scale: 0.95 }}
           onClick={handleClick}
         >
-          <Link href={href} scroll={false}>
-            {label}
+          <Link href={href} scroll={href !== "/services"}>
+            <a className={isActive(href) ? "text-orange-500 font-bold" : ""}>
+              {label}
+            </a>
             <span
-              className="absolute -bottom-1 left-0 h-0.5 w-0 bg-orange-500"
-              style={{ transition: "width 0.3s" }}
+              className={`absolute -bottom-1 left-0 h-0.5 transition-all ${
+                isActive(href) ? "w-full bg-orange-500" : "w-0"
+              }`}
             />
           </Link>
         </motion.button>
