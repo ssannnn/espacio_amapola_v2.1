@@ -6,21 +6,21 @@ const faqs = [
   {
     question: "¿Cuándo puedo empezar?",
     answer:
-      "Los encuentros de movimiento, a partir del segundo trimestre. La preparación para el trabajo de parto y parto, a partir de la semana 28.",
+      "Los encuentros de movimiento, a partir del segundo trimestre. La propuesta 'Camino al Encuentro' a partir de la semana 28.",
   },
   {
-    question: "¿Los encuentros presenciales son únicamente a domicilio?",
-    answer: "Actualmente si, siempre que sean dentro de algunos barrios de CABA.",
+    question: "¿Hay encuentros presenciales?",
+    answer: "Actualmente, los martes y jueves ofrecemos encuentros de movimiento para embarazadas en Recoleta. Por otro lado, está la posibilidad de ir a domicilio dentro de algunos barrios de CABA.",
   },
   {
-    question: "¿La modalidad híbrida es posible?",
+    question: "¿Hay encuentros grupales para embarazadas?",
     answer:
-      "Si, siempre se puede conversar acerca de realizar algunos encuentros de manera presencial en CABA y virtual.",
+      "Los días martes y jueves. Están pensados para que puedas moverte junto a otras madres, compartiendo vivencias e inquietudes a lo largo del camino.",
   },
   {
-    question: "¿Aceptas obras sociales o prepagas?",
+    question: "¿Existe la modalidad virtual?",
     answer:
-      "Actualmente trabajo de manera particular. Recomiendo contactarme para verificar las opciones de pago disponibles antes de tu primera cita. También ofrezco planes de pago para servicios.",
+      "Todas las propuestas pueden hacerse desde donde estés.",
   },
 ]
 

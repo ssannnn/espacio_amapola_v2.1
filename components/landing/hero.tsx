@@ -35,27 +35,27 @@ export default function Hero() {
   const images = [
     {
       src: "/hero_11.webp",
-      alt: "Pregnant woman",
+      alt: "Hijo con madre embarazada",
       color: "from-orange-300/40 to-transparent",
-      shape: "rounded-2xl",
+      shape: "rounded-xl",
     },
     {
-      src: "/hero_22.webp",
-      alt: "Mother and baby",
+      src: "/hero_44.webp",
+      alt: "Recien nacido",
       color: "from-orange-400/40 to-transparent",
-      shape: "rounded-2xl", 
+      shape: "rounded-full", 
     },
     {
       src: "/hero_33.webp",
-      alt: "Family",
+      alt: "Bebe",
       color: "from-orange-500/40 to-transparent",
       shape: "rounded-2xl",
     },
     {
-      src: "/hero_44.webp",
-      alt: "Newborn",
+      src: "/hero_22.webp",
+      alt: "Madre amamantando",
       color: "from-orange-600/40 to-transparent",
-      shape: "rounded-2xl",
+      shape: "rounded-xl",
     },
   ]
 
@@ -133,7 +133,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            Te acompañamos a transitar el camino hacia el encuentro con tu bebé y los primeros días en casa,
+            Te acompaño a transitar el camino hacia el encuentro con tu bebé y los primeros días en casa,
             ofreciéndote herramientas prácticas para conectar con vos misma, con tu bebé y tu pareja.
           </motion.p>
 

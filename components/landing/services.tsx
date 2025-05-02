@@ -9,12 +9,12 @@ const services = [
   {
     title: "Prenatal",
     description:
-      "Propuestas integrales para acompañarte durante el embarazo, prepararte para el parto y conectar con tu bebé.",
+      "Propuestas pensadas para transitar el embarazo en compañía y con herramientas prácticas para el trabajo de parto y parto.",
     image: "/prenatal_1.webp",
   },
   {
     title: "En Pareja",
-    description: "Preparación para recibir a tu bebé junto a tu pareja o acompañante, fortaleciendo el vínculo.",
+    description: "Encuentros para prepararse junto a tu pareja o acompañante para la llegada del bebé.",
     image: "/en_pareja_1.webp",
   },
   {
@@ -38,8 +38,7 @@ export default function Services() {
         <div className="mb-16 text-center">
           <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Acompañamiento Integral</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
-            Te acompaño durante todo el proceso, desde el embarazo hasta el postparto, con servicios personalizados
-            disponibles online y presenciales
+            Desde el embarazo hasta el postparto con propuestas personalizadas, disponibles de manera presencial u online.
           </p>
         </div>
 
@@ -59,8 +58,8 @@ export default function Services() {
 
             <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
               <div className="flex justify-between">
-                <h3 className="text-2xl md:text-3xl">Habitando mi Cuerpo</h3>
-
+                <h3 className="text-2xl md:text-3xl">Encuentros semanales para embarazadas</h3>
+                
                 {/* Location indicator */}
                 <div className="flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm backdrop-blur-sm">
                   <svg
@@ -85,10 +84,13 @@ export default function Services() {
               <div className="flex flex-col gap-6 md:flex-row md:items-end">
                 {/* Content area - reduced width to accommodate larger map */}
                 <div className="flex-1 md:max-w-[50%]">
+                  <h4 className="text-xl md:text-2xl mb-4">
+                    Habitando mí cuerpo
+                 </h4>
                   <p className="mb-6 text-base md:text-lg text-neutral-200">
-                    Trabajamos con movimientos suaves y conscientes para aliviar tensiones, desde la esferodinamia, el
-                    método de Frida Kaplan y visualizaciones, para conectar con tu bebé y preparar tu cuerpo para el
-                    trabajo de parto y parto.
+                    Trabajamos con movimientos suaves y conscientes para aliviar tensiones, desde la esferodinamia,
+                    el método de Frida Kaplan, hipnoparto, centros de energía y visualizaciones,
+                    para conectar con tu bebé y preparar tu cuerpo para el trabajo de parto y parto.
                   </p>
                   <button className="rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600">
                     <Link href="/services">Conocer Más</Link>
