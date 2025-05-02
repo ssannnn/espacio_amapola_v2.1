@@ -1,7 +1,7 @@
 import Hero         from "@/components/landing/hero"
 import Services     from "@/components/landing/services"
 import Testimonials from "@/components/landing/testimonials"
-import About        from "@/components/landing/about"
+import About        from "@/components/landing/about_v2"
 import FAQ          from "@/components/landing/faq"
 import Contact      from "@/components/landing/contact"
 
