@@ -133,7 +133,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            Te acompañamos a transitar el camino hacia el encuentro con tu bebé y los primeros días en casa,
+            Te acompaño a transitar el camino hacia el encuentro con tu bebé y los primeros días en casa,
             ofreciéndote herramientas prácticas para conectar con vos misma, con tu bebé y tu pareja.
           </motion.p>
 
