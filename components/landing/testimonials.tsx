@@ -128,7 +128,7 @@ export default function Testimonials() {
             Testimonios
           </span>
           <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Experiencias de Familias</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
+          <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-neutral-600">
             Testimonios de familias que me permitieron ser parte de su camino.
           </p>
         </div>

@@ -37,7 +37,7 @@ export default function Services() {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
           <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Acompañamiento Integral</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-600">
+          <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-neutral-600">
             Desde el embarazo hasta el postparto con propuestas personalizadas, disponibles de manera presencial u online.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function Services() {
 
             <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
               <div className="flex justify-between">
-                <h3 className="text-2xl md:text-3xl">Encuentros semanales para embarazadas</h3>
+                <h3 className="text-xl md:text-3xl">Encuentros semanales para embarazadas</h3>
                 
                 {/* Location indicator */}
                 <div className="flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm backdrop-blur-sm">
@@ -84,15 +84,15 @@ export default function Services() {
               <div className="flex flex-col gap-6 md:flex-row md:items-end">
                 {/* Content area - reduced width to accommodate larger map */}
                 <div className="flex-1 md:max-w-[50%]">
-                  <h4 className="text-xl md:text-2xl mb-4">
+                  <h4 className="hidden md:block md:text-2xl mb-4">
                     Habitando mí cuerpo
                  </h4>
-                  <p className="mb-6 text-base md:text-lg text-neutral-200">
+                  <p className="mb-6 text-sm md:text-lg text-neutral-200">
                     Trabajamos con movimientos suaves y conscientes para aliviar tensiones, desde la esferodinamia,
                     el método de Frida Kaplan, hipnoparto, centros de energía y visualizaciones,
                     para conectar con tu bebé y preparar tu cuerpo para el trabajo de parto y parto.
                   </p>
-                  <button className="rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600">
+                  <button className="rounded-full text-sm bg-orange-500 px-6 py-3 text-white hover:bg-orange-600">
                     <Link href="/services">Conocer Más</Link>
                   </button>
                 </div>
@@ -134,7 +134,7 @@ export default function Services() {
                 <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                   <h3 className="text-xl md:text-2xl">{service.title}</h3>
                   <div>
-                    <p className="mb-4 text-neutral-200">{service.description}</p>
+                    <p className="mb-4 text-sm md:text-base text-neutral-200">{service.description}</p>
                     <button className="rounded-full bg-orange-500 px-4 py-2 text-sm text-white hover:bg-orange-600">
                       <Link href={`/services#${service.title.toLowerCase().replace(" ", "-")}`}>Conocer Más</Link>
                     </button>
