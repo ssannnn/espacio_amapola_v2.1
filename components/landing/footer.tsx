@@ -93,10 +93,10 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex flex-col items-center text-center md:items-start md:text-left"
           >
-            <h4 className="mb-4 text-xl text-neutral-900 font-display tracking-wide">Sobre Mi</h4>
+            <h4 className="mb-4 text-xl text-neutral-900 font-display tracking-wide">Redes Sociales</h4>
             <p className="mb-6 font-sans">
-              Estoy dedicada a brindar apoyo personalizado durante todo tu
-              camino de embarazo y más allá.
+              Para estar al día con las ultimas novedades, 
+              podes seguirme en Instagram.
             </p>
             <div className="flex space-x-4">
                 {/* Instagram link */}
