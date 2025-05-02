@@ -93,7 +93,7 @@ export default function Contact() {
             Contacto
           </motion.span>
           <motion.h2
-            className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl"
+            className="mt-4 text-3xl tracking-tight text-neutral-900 sm:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -243,7 +243,7 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-lg font-medium">
+                    <Label htmlFor="name" className="text-base md:text-lg font-medium">
                       Nombre Completo
                     </Label>
                     <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -264,7 +264,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-lg font-medium">
+                    <Label htmlFor="email" className="text-base md:text-lg font-medium">
                       Correo Electrónico
                     </Label>
                     <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -286,7 +286,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-lg font-medium">
+                    <Label htmlFor="phone" className="text-base md:text-lg font-medium">
                       Número de Teléfono
                     </Label>
                     <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -307,7 +307,7 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-lg font-medium">
+                    <Label htmlFor="message" className="text-base md:text-lg font-medium">
                       Mensaje
                     </Label>
                     <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
@@ -346,7 +346,7 @@ export default function Contact() {
                     </Button>
                   </motion.div>
                   <div className="md:col-span-2 mt-4 text-center">
-                    <p className="text-neutral-600 mb-2">O si prefieres una respuesta más rápida:</p>
+                    <p className="text-neutral-600 mb-2 text-base md:text-lg">O si prefieres una respuesta más rápida:</p>
                     <Button
                       variant="outline"
                       className="rounded-full border-2 border-[#25D366] px-6 py-3 text-[#25D366] hover:bg-[#25D366]/10"

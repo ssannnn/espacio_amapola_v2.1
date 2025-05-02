@@ -49,7 +49,7 @@ export default function FAQ() {
           <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600">
             FAQ
           </span>
-          <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Preguntas Frecuentes</h2>
+          <h2 className="mt-4 text-3xl tracking-tight text-neutral-900 sm:text-5xl">Preguntas Frecuentes</h2>
         </div>
 
         <div className="mx-auto max-w-3xl">
@@ -67,7 +67,7 @@ export default function FAQ() {
                   className="flex w-full items-center justify-between p-6 text-left"
                   onClick={() => toggleItem(`item-${index}`)}
                 >
-                  <h3 className="text-lg text-neutral-900">{faq.question}</h3>
+                  <h3 className="text-base md:text-lg text-neutral-900">{faq.question}</h3>
                   <div>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@ export default function FAQ() {
                 {openItem === `item-${index}` && (
                   <div>
                     <div className="border-t border-neutral-100 px-6 pb-6 pt-4 md:animate-fadeIn">
-                      <p className="text-neutral-600">{faq.answer}</p>
+                      <p className="text-neutral-600 text-sm md:text-base">{faq.answer}</p>
                     </div>
                   </div>
                 )}
