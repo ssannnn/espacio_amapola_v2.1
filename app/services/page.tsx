@@ -577,7 +577,7 @@ export default function ServicesPage() {
               Acompañamiento Integral
             </motion.h1>
             <motion.p
-              className="mx-auto max-w-2xl text-lg text-neutral-600 md:text-xl"
+              className="mx-auto max-w-2xl text-base text-neutral-600 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -642,8 +642,8 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
               >
                 <h2 className="mb-4 text-3xl text-neutral-900 sm:text-4xl">{service.title}</h2>
-                <p className="mb-2 text-xl text-orange-500">{service.subtitle}</p>
-                <p className="mb-6 text-lg text-neutral-600">{service.description}</p>
+                <p className="mb-2 text-lg md:text-xl text-orange-500">{service.subtitle}</p>
+                <p className="mb-6 text-base md:text-lg text-neutral-600">{service.description}</p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
                     <Link href="#contact">Reservar Este Servicio</Link>
@@ -807,7 +807,7 @@ export default function ServicesPage() {
                     />
                   </div>
                 </div>
-                <p className="mb-6 text-lg md:text-xl italic leading-relaxed text-neutral-700">{service.testimonial.quote}</p>
+                <p className="mb-6 text-base md:text-xl italic leading-relaxed text-neutral-700">{service.testimonial.quote}</p>
                 <div className="text-center">
                   <p className="text-orange-500">{service.testimonial.name}</p>
                 </div>
@@ -846,11 +846,11 @@ export default function ServicesPage() {
               viewport={{ once: true }}
             >
               <h3 className="mb-4 text-2xl sm:text-3xl">¿Estas interesada?</h3>
-              <p className="mb-6 text-lg text-white/90">
+              <p className="mb-6 text-base md:text-lg text-white/90">
                 Contactame para comenzar cuando ambos lo deseen.
               </p>
               <Button
-                className="rounded-full bg-white px-8 py-3 text-lg font-light text-orange-500 hover:bg-white/90"
+                className="rounded-full bg-white px-8 py-3 text-base md:text-lg font-light text-orange-500 hover:bg-white/90"
                 asChild
               >
                 <Link href="#contact">Agendar consulta</Link>
@@ -889,7 +889,7 @@ export default function ServicesPage() {
               Reserva un lugar
             </motion.h2>
             <motion.p
-              className="mx-auto max-w-2xl text-lg text-neutral-600"
+              className="mx-auto max-w-2xl text-base md:text-lg text-neutral-600"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
