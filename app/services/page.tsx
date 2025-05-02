@@ -372,33 +372,9 @@ export default function ServicesPage() {
       title: "Postparto",
       subtitle: "Acompañamiento después del nacimiento",
       description:
-        "Apoyo especializado para el período posterior al nacimiento, enfocado en la lactancia y el destete respetuoso, adaptado a las necesidades de cada familia.",
+        "Guia para el período posterior al nacimiento, enfocado en la lactancia y el destete respetuoso, adaptado a las necesidades de cada familia.",
       image: "/postparto_1.webp",
       features: [
-        {
-          title: "Asesoría en Lactancia",
-          description:
-            "Apoyo personalizado para resolver dificultades como grietas, dolor o agarre, y ajustar las tomas para que sean más cómodas y efectivas.",
-          icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-orange-500"
-            >
-              <path d="M12 2a7 7 0 0 0-7 7c0 1.5.5 3.5 2 3.5 1.5 0 2-1.5 2-3.5 0 2 .5 3.5 2 3.5s2-1.5 2-3.5c0 2 .5 3.5 2 3.5s2-1.5 2-3.5c0 2 .5 3.5 2 3.5 1.5 0 2-2 2-3.5a7 7 0 0 0-7-7Z"></path>
-              <path d="M13.5 11.5c-.28.56-2.67 1.75-3.5 1.5-.83-.25-1.22-.99-1-2 .22-1.01 1.67-2 3-2 1.33 0 2.28.99 2.5 2 .22 1.01-.47 2-1 2Z"></path>
-              <path d="M13.5 15.5c-.28.56-2.67 1.75-3.5 1.5-.83-.25-1.22-.99-1-2 .22-1.01 1.67-2 3-2 1.33 0 2.28.99 2.5 2 .22 1.01-.47 2-1 2Z"></path>
-              <path d="M13.5 19.5c-.28.56-2.67 1.75-3.5 1.5-.83-.25-1.22-.99-1-2 .22-1.01 1.67-2 3-2 1.33 0 2.28.99 2.5 2 .22 1.01-.47 2-1 2Z"></path>
-            </svg>
-          ),
-        },
         {
           title: "Seguimiento Personalizado",
           description:
@@ -418,29 +394,6 @@ export default function ServicesPage() {
             >
               <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
               <path d="m9 12 2 2 4-4"></path>
-            </svg>
-          ),
-        },
-        {
-          title: "Destete Respetuoso",
-          description:
-            "Acompañamiento para transitar el destete de forma respetuosa, con herramientas y estrategias adaptadas a las necesidades de cada familia.",
-          icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-orange-500"
-            >
-              <path d="M8 9h8"></path>
-              <path d="M8 13h6"></path>
-              <path d="M18 4a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12Z"></path>
             </svg>
           ),
         },
@@ -470,26 +423,27 @@ export default function ServicesPage() {
         {
           title: "Asesorías en Lactancia",
           //price: "$60.000",
-          description: "Espacio personalizado para acompañarte cuando ya nació tu bebé",
+          description: "Encuentro personalizado para acompañarte con tu bebé en brazos.",
           included: [
-            "Duración de 1 a 3 horas",
-            "Resolución de dificultades como grietas o dolor",
-            "Mejora del agarre y ajuste de tomas",
+            "Duración entre 1 a 3 horas",
+            "Resolución de dificultades como dolor, grietas, mastitis",
+            "Ajuste de prendida y tomas",
+            "Extracción y conservación de la leche",
             "Seguimiento durante los siguientes 10 días",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Disponible online o a domicilio en CABA",
           ],
           highlighted: true,
         },
         {
           title: "Destete",
           //price: "$45.000",
-          description: "Acompañamiento para transitar el destete de forma respetuosa",
+          description: "Guía para un destete respetuoso",
           included: [
             "1 encuentro de 1 hora",
             "Herramientas y estrategias personalizadas",
             "Adaptado a las necesidades de cada familia",
             "Seguimiento durante los siguientes 10 días",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Disponible online o a domicilio en CABA",
           ],
         },
       ],
@@ -497,22 +451,22 @@ export default function ServicesPage() {
         {
           question: "¿Cuándo debo buscar asesoría en lactancia?",
           answer:
-            "Puedes buscar asesoría en cualquier momento de la lactancia, pero es especialmente útil en las primeras semanas después del nacimiento o cuando surgen dificultades como dolor, grietas, problemas de agarre o dudas sobre la producción de leche.",
+            "Podes buscar en cualquier momento de la lactancia. Ni bien nacen, siempre sugiero que ante la duda consulten, ya sea acerca de la prendida, dificultades que vayan surgiendo como el dolor, grietas, mastitis, entre otras.",
         },
         {
           question: "¿Cuál es el mejor momento para iniciar el destete?",
           answer:
-            "No hay un momento 'correcto' para el destete, es una decisión personal que depende de las necesidades y circunstancias de cada familia. Lo importante es que sea un proceso respetuoso y gradual. La asesoría te ayudará a encontrar el enfoque adecuado para tu situación específica.",
+            "Es una decisión personal que depende de las necesidades y circunstancias de cada familia. Lo importante es que sea un proceso respetuoso y gradual. La asesoría te ayudará a encontrar el camino adecuado para ustedes.",
         },
         {
           question: "¿Las consultas son presenciales u online?",
           answer:
-            "Ofrecemos ambas modalidades. Las consultas pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA.",
+            "Ofrezco ambas modalidades. Las consultas pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA.",
         },
         {
           question: "¿En qué consiste el seguimiento posterior a la consulta?",
           answer:
-            "Durante los 10 días posteriores a la consulta, estaré disponible para responder tus dudas por mensaje o videollamada breve, ajustar las recomendaciones según sea necesario y acompañarte en el proceso.",
+            "Durante los 10 días siguientes a la consulta, estaré disponible para responder tus dudas por mensaje o videollamada breve, para realizar algún cambio que sea necesarios y acompañarte en el proceso.",
         },
       ],
       testimonial: {
@@ -847,7 +801,7 @@ export default function ServicesPage() {
             >
               <h3 className="mb-4 text-2xl sm:text-3xl">¿Estas interesada?</h3>
               <p className="mb-6 text-base md:text-lg text-white/90">
-                Contactame para comenzar cuando ambos lo deseen.
+              Contactame para despejar las dudas que tengas
               </p>
               <Button
                 className="rounded-full bg-white px-8 py-3 text-base md:text-lg font-light text-orange-500 hover:bg-white/90"
@@ -886,7 +840,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              Reserva un lugar
+              Reserva tu lugar
             </motion.h2>
             <motion.p
               className="mx-auto max-w-2xl text-base md:text-lg text-neutral-600"
@@ -895,8 +849,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              ¿Tienes preguntas o estás lista para reservar un servicio? Completa el formulario o contáctame
-              directamente por WhatsApp para una respuesta más rápida.
+              Estoy disponible para responder tus dudas y ayudarte a reservar. Te invito a escribirme por WhatsApp o a completar el formulario.
             </motion.p>
           </motion.div>
 
@@ -927,8 +880,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="mb-4 text-center text-2xl">Contacto Directo</h3>
                 <p className="mb-6 text-center">
-                  Para una respuesta más rápida, contáctame directamente por WhatsApp. Estoy disponible para resolver
-                  tus dudas y agendar tu consulta.
+                  Para una respuesta más rápida, contáctame directamente por WhatsApp.
                 </p>
                 <div className="flex justify-center">
                   <Button className="w-full rounded-full bg-white px-6 py-3 text-[#25D366] hover:bg-white/90" asChild>
