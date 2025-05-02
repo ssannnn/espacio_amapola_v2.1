@@ -33,13 +33,13 @@ export default function ServicesPage() {
       title: "Prenatal",
       subtitle: "Acompañamiento durante el embarazo",
       description:
-        "Propuestas integrales para acompañarte durante el embarazo, prepararte para el parto y conectar con tu bebé a través de diferentes técnicas y recursos.",
+        "Propuestas integrales para acompañarte durante el embarazo, con recursos para transitar el trabajo de parto, parto y la lactancia.",
       image: "/prenatal_1.webp",
       features: [
         {
           title: "Información Personalizada",
           description:
-            "Cada embarazo es único. Creo planes de cuidado individualizados adaptados a tus necesidades específicas, preferencias y antecedentes de salud.",
+            "Entendiendo que cada embarazo es único, creo un espacio que se adapta a tus necesidades específicas y preferencias.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,9 @@ export default function ServicesPage() {
           ),
         },
         {
-          title: "Movimiento y Respiración",
+          title: "Movimiento",
           description:
-            "Aprende técnicas de movimiento y respiración que te ayudarán durante el trabajo de parto y a conectar con tu bebé durante el embarazo.",
+            "Conecta con tu bebé a través del movimiento y apropiate de técnicas que podrían ayudarte durante el trabajo de parto y parto.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function ServicesPage() {
         {
           title: "Asesoría en Lactancia",
           description:
-            "Recibe orientación experta sobre lactancia, incluyendo técnicas de agarre, posiciones y cómo identificar señales de hambre en tu bebé.",
+            "Llevate las claves para favorecer una lactancia exitosa: prendida, posiciones y reconocimiento de las señales de hambre de tu bebé.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +113,7 @@ export default function ServicesPage() {
         {
           title: "Preparación Integral",
           description:
-            "Preparación completa para el trabajo de parto, parto y la vuelta a casa, con información sobre la fisiología del cuerpo y la importancia del entorno.",
+            "Información  para el trabajo de parto, parto y la vuelta a casa, sobre la fisiología del cuerpo, la importancia del entorno y la lactancia.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -139,42 +139,44 @@ export default function ServicesPage() {
         {
           title: "Camino al Encuentro",
           //price: "$140.000",
-          description: "Propuesta integral para prepararse para el trabajo de parto, parto y la vuelta a casa",
+          description: "Encuentros para comprender y transitar el trabajo de parto, parto y la vuelta a casa con confianza y seguridad.",
           included: [
             "4 encuentros de 1 hora",
             "Frecuencia semanal",
             "Información sobre fisiología del cuerpo",
-            "Recursos de movimiento y respiración",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Recursos corporales",
+            "Disponible online o a domicilio en CABA",
+            "Incluye una asesoria en lactancia",
           ],
         },
         {
           title: "Habitando mi Cuerpo",
           //price: "$130.000",
-          description: "Movimientos suaves y conscientes para aliviar tensiones y preparar tu cuerpo",
+          description: "Movimientos suaves y conscientes para aliviar tensiones y preparar tu cuerpo para el trabajo de parto y parto.",
           included: [
             "A partir de la semana 14 de embarazo",
             "Sesiones de 1 hora y 15 minutos",
             "Frecuencia semanal",
             "Esferodinamia y método de Frida Kaplan",
             "Visualizaciones para conectar con tu bebé",
-            "Ubicación: Arenales al 1900, CABA",
-            "También disponible online",
+            "Presencial en grupo: Arenales al 1900, CABA",
+            "También disponible online o a domicilio CABA",
           ],
           highlighted: true,
         },
         {
           title: "El Arte de Amamantar",
           //price: "$35.000",
-          description: "Charla sobre lactancia y técnicas de amamantamiento",
+          description: "Encuentro sobre lactancia y tips para los primeros días.",
           included: [
-            "1 o 2 encuentros",
-            "Duración de 1 hora",
+            "1 encuentro",
+            "Duración de 1 hora y 15 minutos aproximadamente",
             "Cómo lograr una buena prendida",
             "Identificación de señales de hambre",
             "Posiciones y producción de leche",
-            "Beneficios de amamantar",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Beneficios de la lactancia materna",
+            "Vuelta a casa",
+            "Disponible online o a domicilio en CABA",
           ],
         },
       ],
@@ -182,22 +184,22 @@ export default function ServicesPage() {
         {
           question: "¿Cuándo debo comenzar con la preparación prenatal?",
           answer:
-            "Lo ideal es comenzar en el segundo trimestre, alrededor de la semana 14-20 de embarazo, para tener tiempo suficiente para integrar las técnicas y la información. Sin embargo, puedes comenzar en cualquier momento del embarazo.",
+            "Lo ideal es comenzar en el segundo trimestre, alrededor de la semana 14 de embarazo, para tener tiempo suficiente para integrar las técnicas y la información. Sin embargo, puedes comenzar en cualquier momento del embarazo.",
         },
         {
           question: "¿Puedo asistir con mi pareja?",
           answer:
-            "¡Absolutamente! De hecho, tenemos propuestas específicas para parejas. La participación de tu pareja o acompañante es muy valiosa para el proceso.",
+            "Tenemos propuestas específicas para parejas. La participación de tu pareja o acompañante es muy valiosa para el camino.",
         },
         {
           question: "¿Las sesiones son presenciales u online?",
           answer:
-            "Ofrecemos ambas modalidades. Las sesiones pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA. El plan 'Habitando mi Cuerpo' tiene un espacio específico en Ayacucho y Juncal, CABA.",
+            "Ofrezco ambas modalidades. Las sesiones pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA. El plan 'Habitando mi Cuerpo', a su vez, tiene un espacio específico en Arenales al 1900, CABA.",
         },
         {
           question: "¿Qué debo llevar a las sesiones presenciales?",
           answer:
-            "Para las sesiones presenciales, recomendamos ropa cómoda que te permita moverte con libertad. Para 'Habitando mi Cuerpo', nosotros proporcionamos todos los elementos necesarios como pelotas y otros materiales.",
+            "Para las sesiones presenciales, recomendamos ropa cómoda que te permita moverte con libertad. Para 'Habitando mi Cuerpo', cuento con todos los elementos necesarios como pelotas, mats y otros materiales.",
         },
       ],
       testimonial: {
@@ -210,15 +212,15 @@ export default function ServicesPage() {
     {
       id: "pareja",
       title: "En Pareja",
-      subtitle: "Preparación para recibir a tu bebé junto a tu acompañante",
+      subtitle: "Propuestas para recibir a tu bebé junto a tu acompañante",
       description:
-        "Propuestas diseñadas para que junto a tu pareja o acompañante se preparen para la llegada del bebé, fortaleciendo el vínculo y aprendiendo juntos sobre el proceso.",
+        "Encuentros diseñados para que, junto a tu pareja o acompañante, se preparen para la llegada del bebé, fortaleciendo el vínculo y llevándose las herramientas que les den tranquilidad y confianza en el camino.",
       image: "/en_pareja_1.webp",
       features: [
         {
           title: "Preparación Conjunta",
           description:
-            "Aprenderán juntos sobre el proceso de parto y cómo pueden apoyarse mutuamente durante este momento tan especial.",
+            "Aprenderán juntos sobre el proceso de parto y cómo pueden apoyarse mutuamente durante este tiempo tan especial.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +244,7 @@ export default function ServicesPage() {
         {
           title: "Recursos Prácticos",
           description:
-            "Técnicas de acompañamiento, masajes y posiciones que pueden utilizar durante el trabajo de parto para mayor comodidad.",
+            "Técnicas corporales y  masajes para transitar el embarazo, trabajo de parto y parto.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -263,7 +265,7 @@ export default function ServicesPage() {
         {
           title: "Asesoría en Lactancia",
           description:
-            "Información para que ambos comprendan el proceso de lactancia y cómo pueden colaborar para que sea exitoso.",
+            "Información clave para entender la fisiología de la lactancia y las formas en que ambos pueden participar activamente.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +287,7 @@ export default function ServicesPage() {
         {
           title: "Fortalecimiento del Vínculo",
           description:
-            "Actividades para fortalecer el vínculo entre la pareja y con el bebé, preparándose emocionalmente para la llegada.",
+            "Espacios para fortalecer el vínculo entre la pareja y con el bebé, preparándose emocionalmente para su llegada.",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -312,52 +314,50 @@ export default function ServicesPage() {
           title: "Camino al Encuentro",
           //price: "$140.000",
           description:
-            "Propuesta integral para prepararse en pareja para el trabajo de parto, parto y la vuelta a casa",
+            "Propuesta integral para conectar con tu pareja y el bebé. Un espacio para prepararse para el trabajo de parto, el parto  y la vuelta a casa.",
           included: [
             "4 encuentros de 1 hora",
             "Frecuencia semanal",
             "Información sobre fisiología del cuerpo",
-            "Recursos de movimiento y respiración",
-            "Técnicas de acompañamiento para la pareja",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Recursos de corporales",
+            "Rol del acompañante",
+            "Disponible online o a domicilio en CABA",
+            "Incluye asesoría en lactancia"
           ],
           highlighted: true,
         },
         {
           title: "El Arte de Amamantar",
           //price: "$35.000",
-          description: "Charla sobre lactancia y técnicas de amamantamiento para ambos",
+          description: "Encuentro sobre lactancia, rol del acompañante y tips para los primeros días.",
           included: [
-            "1 o 2 encuentros",
-            "Duración de 1 hora",
+            "1 Encuentro",
+            "Duración de 1 hora y 15 minutos aproximadamente",
             "Cómo lograr una buena prendida",
             "Identificación de señales de hambre",
             "Posiciones y producción de leche",
-            "Beneficios de amamantar",
-            "Disponible online o a domicilio en zona norte, CABA",
+            "Beneficios de la lactancia materna",
+            "Rol del acompañante",
+            "Vuelta a casa",
+            "Disponible online o a domicilio en CABA",
           ],
         },
       ],
       faqs: [
         {
-          question: "¿Es necesario que mi pareja asista a todas las sesiones?",
+          question: "¿Es necesario que mi pareja asista a todas los encuentros?",
           answer:
-            "Lo ideal es que asista a todas las sesiones para aprovechar al máximo el programa, pero entendemos que a veces hay compromisos laborales u otras responsabilidades. Pueden coordinar la asistencia según sus posibilidades.",
-        },
-        {
-          question: "¿Qué pasa si no tengo pareja pero quiero que me acompañe un familiar o amigo/a?",
-          answer:
-            "¡Absolutamente bienvenido/a! El acompañante puede ser cualquier persona que estará contigo durante el parto y posparto: tu madre, hermana, amiga, doula, etc. Lo importante es que sea alguien con quien te sientas cómoda y que esté comprometido/a con el proceso.",
+            "Lo ideal es que asista a los 4 encuentros para aprovechar al máximo el programa, pero entendemos que a veces hay compromisos laborales u otras responsabilidades. Siempre se puede intentar reprogramar la fecha.",
         },
         {
           question: "¿Cuál es el mejor momento para tomar estas sesiones?",
           answer:
-            "Recomendamos comenzar en el segundo trimestre, idealmente entre las semanas 20-30 de embarazo, para tener tiempo de practicar e integrar las técnicas aprendidas.",
+            "Pueden realizarlas en cualquier momento, aunque mi sugerencia es hacerlo alrededor de las 28 semanas.segundo trimestre, para tener tiempo de practicar e internalizar las técnicas aprendidas.",
         },
         {
           question: "¿Las sesiones son presenciales u online?",
           answer:
-            "Ofrecemos ambas modalidades. Las sesiones pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA.",
+            "Ofrezco ambas modalidades. Pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA.",
         },
       ],
       testimonial: {
@@ -582,8 +582,7 @@ export default function ServicesPage() {
               animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Te acompaño durante todo el proceso, desde el embarazo hasta el postparto, con servicios personalizados
-              para ti y tu familia
+              Estoy para acompañarte desde el embarazo hasta el postparto, con propuestas pensadas para vos y tu familia.
             </motion.p>
 
             <motion.div
@@ -699,7 +698,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Opciones</h3>
+              <h2 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Propuestas</h2>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {service.pricing.map((plan, index) => (
                   <motion.div
@@ -749,7 +748,7 @@ export default function ServicesPage() {
                       className="mt-auto w-full rounded-full bg-orange-500 py-2 text-white hover:bg-orange-600"
                       asChild
                     >
-                      <Link href="#contact">Seleccionar Plan</Link>
+                      <Link href="#contact">Me interesa</Link>
                     </Button>
                   </motion.div>
                 ))}
@@ -846,15 +845,15 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-4 text-2xl sm:text-3xl">¿Lista para comenzar?</h3>
+              <h3 className="mb-4 text-2xl sm:text-3xl">¿Estas interesada?</h3>
               <p className="mb-6 text-lg text-white/90">
-                Reserva una consulta para hablar sobre cómo puedo acompañarte en tu {service.title.toLowerCase()}.
+                Contactame para comenzar cuando ambos lo deseen.
               </p>
               <Button
                 className="rounded-full bg-white px-8 py-3 text-lg font-light text-orange-500 hover:bg-white/90"
                 asChild
               >
-                <Link href="#contact">Reservar Consulta</Link>
+                <Link href="#contact">Agendar consulta</Link>
               </Button>
             </motion.div>
           </div>
