@@ -128,7 +128,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mb-8 max-w-xl text-lg text-neutral-700 md:text-xl"
+            className="mb-8 max-w-xl text-base text-neutral-700 md:text-xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}

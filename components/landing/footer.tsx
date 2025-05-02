@@ -85,7 +85,42 @@ export default function Footer() {
 
         {/* Main content grid */}
         <div className="grid gap-12 md:grid-cols-3">
-          {/* About section */}
+           {/* Quick links section with visual indicators */}
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center md:items-start"
+          >
+            <h4 className="mb-4 text-xl text-neutral-900 font-display tracking-wide">Enlaces Rápidos</h4>
+            <ul className="space-y-3 font-sans">
+              {[
+                { name: "Inicio", path: "/" },
+                { name: "Propuestas", path: "/services" },
+                { name: "Sobre mí", path: "/#about" },
+                { name: "Testimonios", path: "/#testimonials" },
+                { name: "Preguntas Frecuentes", path: "/#faq" },
+                { name: "Contacto", path: "/#contact" },
+              ].map((item, index) => (
+                <motion.li
+                  key={index}
+                  whileHover={{ x: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <Link
+                    href={item.path}
+                    className="group flex items-center text-neutral-700 transition-colors hover:text-orange-500"
+                  >
+                    <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-orange-300 transition-all duration-300 group-hover:h-2 group-hover:w-2 group-hover:bg-orange-500"></span>
+                    {item.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Social link section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -124,41 +159,6 @@ export default function Footer() {
                   </Link>
                 </motion.div>             
             </div>
-          </motion.div>
-
-          {/* Quick links section with visual indicators */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="flex flex-col items-center md:items-start"
-          >
-            <h4 className="mb-4 text-xl text-neutral-900 font-display tracking-wide">Enlaces Rápidos</h4>
-            <ul className="space-y-3 font-sans">
-              {[
-                { name: "Inicio", path: "/" },
-                { name: "Propuestas", path: "/services" },
-                { name: "Sobre mí", path: "/#about" },
-                { name: "Testimonios", path: "/#testimonials" },
-                { name: "Preguntas Frecuentes", path: "/#faq" },
-                { name: "Contacto", path: "/#contact" },
-              ].map((item, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <Link
-                    href={item.path}
-                    className="group flex items-center text-neutral-700 transition-colors hover:text-orange-500"
-                  >
-                    <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-orange-300 transition-all duration-300 group-hover:h-2 group-hover:w-2 group-hover:bg-orange-500"></span>
-                    {item.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
           </motion.div>
 
           {/* Newsletter section with improved visual design */}
