@@ -350,12 +350,12 @@ export default function ServicesPage() {
             "Lo ideal es que asista a los 4 encuentros para aprovechar al máximo el programa, pero entendemos que a veces hay compromisos laborales u otras responsabilidades. Siempre se puede intentar reprogramar la fecha.",
         },
         {
-          question: "¿Cuál es el mejor momento para tomar estas sesiones?",
+          question: "¿Cuál es el mejor momento para realizar los encuentros?",
           answer:
             "Pueden realizarlas en cualquier momento, aunque mi sugerencia es hacerlo alrededor de las 28 semanas.segundo trimestre, para tener tiempo de practicar e internalizar las técnicas aprendidas.",
         },
         {
-          question: "¿Las sesiones son presenciales u online?",
+          question: "¿Los encuentros son presenciales u online?",
           answer:
             "Ofrezco ambas modalidades. Pueden ser online o presenciales en tu domicilio si estás cerca de Recoleta, CABA.",
         },
@@ -421,7 +421,7 @@ export default function ServicesPage() {
       ],
       pricing: [
         {
-          title: "Asesorías en Lactancia",
+          title: "Asesoría en Lactancia",
           //price: "$60.000",
           description: "Encuentro personalizado para acompañarte con tu bebé en brazos.",
           included: [
@@ -546,7 +546,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <Button className="rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
-                <Link href="#contact">Reservar un lugar</Link>
+                <Link href="#contact">Reservar tu lugar</Link>
               </Button>
               <Button
                 variant="outline"
@@ -600,7 +600,7 @@ export default function ServicesPage() {
                 <p className="mb-6 text-base md:text-lg text-neutral-600">{service.description}</p>
                 <div className="flex flex-wrap gap-4">
                   <Button className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
-                    <Link href="#contact">Reservar Este Servicio</Link>
+                    <Link href="#contact">Reservar</Link>
                   </Button>
                   <Button
                     variant="outline"
