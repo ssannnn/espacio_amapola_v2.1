@@ -1,88 +1,189 @@
 # Espacio Amapola Landing Page
 
-Este proyecto es un sitio web moderno para servicios de cuidado materno, diseñado para proporcionar información sobre servicios de acompañamiento durante el embarazo, parto y postparto.
+A modern and accessible landing page for **Espacio Amapola**, a maternal-infant support service. This site showcases service offerings (*Prenatal*, *Couples Sessions*, *Postpartum*), real testimonials, an About Me section with the lead professional, an FAQ, and a direct contact form via WhatsApp.
 
-## Características Técnicas
+---
 
-### Tecnologías Utilizadas
+## Table of Contents
 
-- **Framework**: Next.js 13.5.4 con App Router
-- **Lenguaje**: TypeScript
-- **Estilos**: Tailwind CSS
-- **Animaciones**: Framer Motion
-- **Componentes UI**: shadcn/ui
-- **Iconos**: Lucide React & Simple Icons
-- **Fuentes**: Sour Gummy (para títulos) e Inter (para contenido) de Google Fonts
+- [Espacio Amapola Landing Page](#espacio-amapola-landing-page)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Key Features](#key-features)
+  - [Style Decisions](#style-decisions)
+  - [Technologies \& Tools](#technologies--tools)
+  - [Project Structure](#project-structure)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Environment Variables](#environment-variables)
+    - [Running in Development](#running-in-development)
+    - [Build \& Production](#build--production)
+  - [License](#license)
+  - [Credits](#credits)
 
-## Guía de Estilo
+---
 
-### Colores
+## Description
 
-La paleta de colores se centra en tonos cálidos y acogedores, con énfasis en el naranja como color principal:
+Espacio Amapola is a center offering guidance and care for the maternity journey:
 
-- **Primario**: Naranja (Tailwind orange-500)
-- **Secundario**: Blanco (#ffffff)
-- **Fondo**: Blanco/Gris muy claro (#f9fafb)
-- **Texto**: Negro/Gris oscuro (#111827, #374151)
-- **Acentos**: Variaciones de naranja claro (#fdeee4, #fef8f4)
+- **Prenatal**: Techniques and tools to prepare for pregnancy and birth.
+- **Couples Sessions**: Joint workshops to support the growing family.
+- **Postpartum**: Advice on breastfeeding, weaning, and maternal recovery.
 
-### Tipografía
+The landing page is designed to convey warmth and trust, inviting visitors to explore services and get in touch quickly.
 
-- **Fuente para Títulos**: Sour Gummy (sans-serif) - Actualizado
-- **Fuente para Contenido**: Inter (sans-serif)
-- **Tamaños de Fuente**:
-  - Títulos principales: 4rem/5rem (64px/80px)
-  - Subtítulos: 2rem/3rem (32px/48px)
-  - Texto normal: 1rem/1.125rem (16px/18px)
-  - Texto pequeño: 0.875rem (14px)
-- **Pesos de Fuente**:
-  - Light: 300
-  - Regular: 400
-  - Medio: 500
-  - Semi-negrita: 600
+---
 
-### Espaciado
+## Key Features
 
-- **Sistema de Espaciado**: Basado en múltiplos de 4px
-- **Espaciado Común**:
-  - xs: 0.25rem (4px)
-  - sm: 0.5rem (8px)
-  - md: 1rem (16px)
-  - lg: 1.5rem (24px)
-  - xl: 2rem (32px)
-  - 2xl: 3rem (48px)
-  - 3xl: 4rem (64px)
+- **Dynamic Sections**: Home, Services, Testimonials, About, FAQ, Contact.
+- **Interactive Hero**: Parallax effect and cursor tracking with Framer Motion.
+- **Testimonials Slider**: Responsive carousel showcasing real feedback.
+- **Contact Form**: Client-side validation with simulated submission flow.
+- **WhatsApp Button**: One-click access to chat with the specialist.
+- **Sticky Navigation**: Smooth scrolling and style adjustments on scroll.
+- **Light/Dark Mode**: Toggleable theme support via CSS classes.
 
-### Bordes y Sombras
+---
 
-- **Radios de Borde**:
-  - Pequeño: 0.25rem (4px)
-  - Medio: 0.5rem (8px)
-  - Grande: 1rem (16px)
-  - Extra grande: 1.5rem (24px)
-  - Circular: 9999px
-  
-### Animaciones
+## Style Decisions
 
-- **Transiciones**: Suaves y naturales (0.3s - 0.5s)
-- **Efectos Hover**: Sutiles cambios de escala y color
-- **Animaciones de Página**: Entradas suaves y escalonadas
-- **Parallax**: Efectos sutiles de parallax en algunas secciones
+- **Color Palette**
 
-## Responsive Design
+  - Neutral backgrounds: `bg-neutral-50` / `bg-white`
+  - Primary accent (main orange): `#FFA500` (`bg-orange-500` / `text-orange-500`)
+  - Soft accents: pastel peach and apricot tones
+  - Text colors: `text-gray-900` (headings) / `text-gray-700` (body)
 
-El sitio está diseñado para ser completamente responsive, con puntos de quiebre en:
+- **Typography**
 
-- **Móvil**: < 640px
-- **Tablet**: 640px - 1024px
-- **Desktop**: > 1024px
-- **Desktop Grande**: > 1280px
+  - Google Fonts:
+    - Headings: “Sour Gummy”
+    - Body text: “Inter”
+  - System font stack fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`
 
-## Accesibilidad
+- **Images**
 
-- **Contraste de Color**: Cumple con WCAG 2.1 AA
-- **Navegación por Teclado**: Todos los elementos interactivos son accesibles por teclado
-- **Textos Alternativos**: Todas las imágenes tienen textos alternativos descriptivos
-- **Estructura Semántica**: Uso apropiado de elementos HTML semánticos
-- **ARIA**: Atributos ARIA donde son necesarios
-  
+  - WebP format for hero and service graphics
+  - `next/image` for lazy-loading and responsive support
+
+- **Animations**
+
+  - Framer Motion for parallax, fade-ins, and hover states
+  - Tailwind CSS Animate for simple transitions
+
+- **Accessibility**
+
+  - High-contrast focus styles
+  - ARIA labels on interactive elements
+  - Full keyboard navigation support
+
+---
+
+## Technologies & Tools
+
+- **Framework**: Next.js 13 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS (+ tailwindcss-animate)
+- **UI Components**:
+  - [shadcn/ui](https://ui.shadcn.com)
+  - [Radix UI](https://www.radix-ui.com)
+- **Forms**: React Hook Form
+- **Animations**: Framer Motion
+- **Charts**: Recharts (optional)
+- **Utilities**: clsx, tailwind-merge
+- **Lint & Format**: ESLint, Prettier
+- **Deployment Options**: Vercel, Docker, DigitalOcean
+
+---
+
+## Project Structure
+
+```
+.
+├── .env.example          # Example environment variables
+├── app/                  # Next.js App Router: layout & pages
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── sections.ts       # Definitions for homepage sections
+├── components/           
+│   ├── landing/          # Section components (Hero, Services, etc.)
+│   └── ui/               # Design system components (Buttons, Inputs…)
+├── public/               # Static assets (images, icons, etc.)
+├── styles/               # Global CSS (globals.css)
+├── tailwind.config.ts
+├── postcss.config.mjs
+├── tsconfig.json
+├── package.json
+└── README.md             # ← You are here
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js ≥ v18
+- npm ≥ 7 or Yarn
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/espacio-amapola-landing.git
+cd espacio-amapola-landing
+npm install
+# or
+yarn install
+```
+
+### Environment Variables
+
+Copy the example file and fill in:
+
+```bash
+cp .env.example .env
+```
+
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: WhatsApp contact number
+- `NEXT_PUBLIC_INSTAGRAM_URL`: Instagram profile link
+
+### Running in Development
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build & Production
+
+```bash
+npm run build
+npm start
+# or
+yarn build
+yarn start
+```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Credits
+
+- [Next.js](https://nextjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Radix UI](https://www.radix-ui.com)
+- [shadcn/ui](https://ui.shadcn.com)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Recharts](https://recharts.org)
+- Original design inspiration by [Espacio Amapola](https://espacio-amapola-v2-1.vercel.app/)
