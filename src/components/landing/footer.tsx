@@ -132,8 +132,7 @@ export default function Footer(): React.JSX.Element {
               Redes Sociales
             </h4>
             <p className="mb-6 font-sans">
-              Para estar al día con las ultimas novedades, podes seguirme en
-              Instagram.
+              Enterate de todo lo nuevo siguiéndome en Instagram.
             </p>
             <div className="flex space-x-4">
               {/* Instagram link */}
@@ -182,7 +181,8 @@ export default function Footer(): React.JSX.Element {
               Newsletter
             </h4>
             <p className="mb-4 font-sans">
-              Suscríbete para recibir las últimas actualizaciones y recursos.
+              Te invito a suscribirte para recibir las últimas actualizaciones y
+              novedades de nuevas propuestas.
             </p>
             {isSubscribed ? (
               <motion.div
