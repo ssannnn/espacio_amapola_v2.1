@@ -19,7 +19,6 @@ import WhatsAppButton from "@/src/components/landing/whatsapp-button";
 import ScrollToTop from "@/src/components/landing/scroll-to-top";
 
 const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
-
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
 export default function ServicesPage(): ReactElement {
@@ -33,6 +32,67 @@ export default function ServicesPage(): ReactElement {
     once: false,
     amount: 0.2,
   });
+
+    interface FormData {
+        name: string;
+        email: string;
+        phone: string;
+        service: string;
+        message: string;
+      }
+      interface FormspreeErrorResponse {
+        errors?: { message: string }[];
+      }
+      const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
+      const [formData, setFormData] = useState<FormData>({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+      const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+      const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+    
+      const handleChange = (
+        e: React.ChangeEvent<
+          HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+      ): void => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+      };
+    
+      const handleSubmit = async (
+        e: React.FormEvent<HTMLFormElement>
+      ): Promise<void> => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        try {
+          const res = await fetch(formspreeEndpoint, {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (!res.ok) {
+            const data = (await res.json()) as FormspreeErrorResponse;
+            throw new Error(
+              data.errors?.[0]?.message ?? "Error al enviar el formulario"
+            );
+          }
+    
+          setIsSubmitted(true);
+          setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+        } catch (error) {
+          alert((error as Error).message);
+        } finally {
+          setIsSubmitting(false);
+        }
+    };
 
   // Service data
   const services = [
@@ -1008,7 +1068,64 @@ export default function ServicesPage(): ReactElement {
               viewport={{ once: true }}
             >
               <div className="rounded-2xl bg-white p-8 shadow-lg">
-                <form className="grid gap-6 md:grid-cols-2">
+                {isSubmitted ? (
+                    // ─── BLOQUE “¡GRACIAS!” ────────────────────────
+                    <motion.div
+                      className="flex h-full flex-col items-center justify-center text-center"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <motion.div
+                        className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-500"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
+                      >
+                        {/* Aquí SVG de check */}
+                        <svg /* … */>…</svg>
+                      </motion.div>
+                      <motion.h3
+                        className="mb-4 text-2xl text-neutral-900"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                      >
+                        ¡Gracias!
+                      </motion.h3>
+                      <motion.p
+                        className="text-lg text-neutral-600"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
+                      >
+                        Tu mensaje ha sido recibido. Me pondré en contacto lo antes posible.
+                      </motion.p>
+                      <motion.button
+                        className="mt-8 rounded-full bg-orange-500 px-6 py-2 text-white hover:bg-orange-600"
+                        onClick={() => {
+                          setIsSubmitted(false);
+                          setFormData({
+                            name: "",
+                            email: "",
+                            phone: "",
+                            service: "",
+                            message: "",
+                          });
+                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.5 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        Enviar Otro Mensaje
+                      </motion.button>
+                    </motion.div>
+                    // ───────────────────────────────────────────────
+                  ) : (
+                  // ─── FORMULARIO ORIGINAL ───────────────────
+                <form onSubmit={(e) => { void handleSubmit(e); }} className="grid gap-6 md:grid-cols-2">
                   <div className="md:col-span-1">
                     <label
                       htmlFor="name"
@@ -1019,6 +1136,10 @@ export default function ServicesPage(): ReactElement {
                     <input
                       type="text"
                       id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
                       className="w-full rounded-lg border border-neutral-300 p-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                       placeholder="Tu nombre"
                       required
@@ -1034,6 +1155,10 @@ export default function ServicesPage(): ReactElement {
                     <input
                       type="email"
                       id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
                       className="w-full rounded-lg border border-neutral-300 p-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                       placeholder="Tu email"
                       required
@@ -1049,6 +1174,10 @@ export default function ServicesPage(): ReactElement {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
                       className="w-full rounded-lg border border-neutral-300 p-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                       placeholder="Tu número de teléfono"
                     />
@@ -1058,14 +1187,18 @@ export default function ServicesPage(): ReactElement {
                       htmlFor="service"
                       className="mb-2 block text-sm font-medium text-neutral-900"
                     >
-                      Servicio de Interés
+                      Propuesta de interés
                     </label>
                     <select
                       id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
                       className="w-full rounded-lg border border-neutral-300 p-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                       required
                     >
-                      <option value="">Selecciona un servicio</option>
+                      <option value="">Selecciona una propuesta</option>
                       <option value="camino-encuentro">
                         Camino al Encuentro
                       </option>
@@ -1090,6 +1223,10 @@ export default function ServicesPage(): ReactElement {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
                       rows={5}
                       className="w-full rounded-lg border border-neutral-300 p-3 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                       placeholder="Cuéntame sobre tus necesidades y cualquier pregunta que tengas"
@@ -1099,12 +1236,13 @@ export default function ServicesPage(): ReactElement {
                   <div className="md:col-span-2">
                     <Button
                       type="submit"
+                      disabled={isSubmitting}
                       className="w-full rounded-lg bg-orange-500 px-6 py-3 text-center text-white hover:bg-orange-600"
                     >
-                      Enviar Mensaje
+                      {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                     </Button>
                   </div>
-                </form>
+                </form>)}
               </div>
             </motion.div>
           </div>
