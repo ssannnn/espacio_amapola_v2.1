@@ -37,10 +37,6 @@ html {
     --ring: 0 0% 3.9%;
 
     --radius: 0.5rem;
-
-    /* Font families */
-    --font-sans: var(--font-inter);
-    --font-display: var(--font-sour-gummy);
   }
 
   .dark {
@@ -72,34 +68,24 @@ html {
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: "Inter", sans-serif;
+    @apply font-sans bg-background text-foreground;
   }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: "Sour Gummy", sans-serif;
+    @apply font-display;
     font-weight: 300;
   }
-}
-
-/* Custom font utility classes */
-.font-display {
-  font-family: "Sour Gummy", sans-serif;
-}
-
-.font-sans {
-  font-family: "Inter", sans-serif;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -109,6 +95,6 @@ html {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

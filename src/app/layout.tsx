@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${inter.variable} ${sourGummy.variable}`}>
-      <body className="font-sans">     
+      <body>     
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
