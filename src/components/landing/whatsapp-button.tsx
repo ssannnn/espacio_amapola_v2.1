@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 
-const whatsappHref = `https://wa.me/${whatsappNumber}`
+const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
 export default function WhatsAppButton() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
 
   // Show button after scrolling down a bit
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
-        setIsVisible(true)
+        setIsVisible(true);
       } else {
-        setIsVisible(false)
+        setIsVisible(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", toggleVisibility)
-    return () => window.removeEventListener("scroll", toggleVisibility)
-  }, [])
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
 
   return (
     <AnimatePresence>
@@ -78,5 +78,5 @@ export default function WhatsAppButton() {
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

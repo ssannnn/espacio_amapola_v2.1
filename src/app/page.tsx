@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Navigation from "@/src/components/landing/navigation"
-import WhatsAppButton from "@/src/components/landing/whatsapp-button"
-import ScrollToTop from "@/src/components/landing/scroll-to-top"
-import Footer from "@/src/components/landing/footer"
-import { sections } from "./sections"
-import { SectionWrapper } from "@/src/components/landing/sectionWrapper"
+import Navigation from "@/src/components/landing/navigation";
+import WhatsAppButton from "@/src/components/landing/whatsapp-button";
+import ScrollToTop from "@/src/components/landing/scroll-to-top";
+import Footer from "@/src/components/landing/footer";
+import { sections } from "./sections";
+import { SectionWrapper } from "@/src/components/landing/sectionWrapper";
 
 export default function Home() {
   return (
@@ -22,5 +22,5 @@ export default function Home() {
       <Footer />
       <ScrollToTop />
     </main>
-  )
+  );
 }

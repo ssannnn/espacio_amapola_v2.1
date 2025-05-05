@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { Button } from "@/src/components/ui/button"
-import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useState, useEffect, useRef } from "react";
+import { Button } from "@/src/components/ui/button";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 300])
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
+  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({
         x: ((e.clientX - rect.left) / rect.width - 0.5) * 30,
         y: ((e.clientY - rect.top) / rect.height - 0.5) * 30,
-      })
-    }
+      });
+    };
 
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   // Borderless images with varied sizes and asymmetrical distribution
   const images = [
@@ -43,7 +43,7 @@ export default function Hero() {
       src: "/hero_44.webp",
       alt: "Recien nacido",
       color: "from-orange-400/40 to-transparent",
-      shape: "rounded-full", 
+      shape: "rounded-full",
     },
     {
       src: "/hero_33.webp",
@@ -57,7 +57,7 @@ export default function Hero() {
       color: "from-orange-600/40 to-transparent",
       shape: "rounded-xl",
     },
-  ]
+  ];
 
   return (
     <section
@@ -111,7 +111,9 @@ export default function Hero() {
             >
               tu{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-orange-500">maternidad</span>
+                <span className="relative z-10 text-orange-500">
+                  maternidad
+                </span>
                 <motion.svg
                   className="absolute -bottom-2 left-0 z-0 h-3 w-full text-orange-200"
                   viewBox="0 0 100 12"
@@ -133,8 +135,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            Te acompaño a transitar el camino hacia el encuentro con tu bebé y los primeros días en casa,
-            ofreciéndote herramientas prácticas para conectar con vos misma, con tu bebé y tu pareja.
+            Te acompaño a transitar el camino hacia el encuentro con tu bebé y
+            los primeros días en casa, ofreciéndote herramientas prácticas para
+            conectar con vos misma, con tu bebé y tu pareja.
           </motion.p>
 
           <motion.div
@@ -143,8 +146,15 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            <Button className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
-              <motion.a href="#contact" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
+              asChild
+            >
+              <motion.a
+                href="#contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Reservar un lugar
               </motion.a>
             </Button>
@@ -153,7 +163,11 @@ export default function Hero() {
               className="w-fit rounded-full border-2 border-orange-500 px-6 py-3 text-orange-500 hover:bg-orange-50"
               asChild
             >
-              <motion.a href="/services" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.a
+                href="/services"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 Quiero saber más
               </motion.a>
             </Button>
@@ -169,11 +183,17 @@ export default function Hero() {
               style={{ aspectRatio: "1/1" }}
             >
               <div className="relative h-full w-full">
-                <Image src={image.src || "/placeholder.svg"} alt={image.alt} fill className="object-cover" />
+                <Image
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                />
 
                 {/* Static gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-b ${image.color} opacity-70`} />
-           
+                <div
+                  className={`absolute inset-0 bg-gradient-to-b ${image.color} opacity-70`}
+                />
               </div>
             </div>
           ))}
@@ -196,5 +216,5 @@ export default function Hero() {
         <p className="mt-2 text-center text-sm text-neutral-500">Scroll Down</p>
       </motion.div>
     </section>
-  )
+  );
 }

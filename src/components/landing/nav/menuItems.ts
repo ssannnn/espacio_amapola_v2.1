@@ -1,4 +1,4 @@
-import { sections } from "@/src/app/sections"
+import { sections } from "@/src/app/sections";
 
 /**
  * Bolts together label, href, and id for every nav item.
@@ -6,6 +6,6 @@ import { sections } from "@/src/app/sections"
  */
 
 export const menuItems = sections.map(({ id, label }) => {
-  const href = id === "propuestas" ? "/services" : `/#${id}`
-  return { id, label, href }
-})
+  const href = id === "propuestas" ? "/services" : `/#${id}`;
+  return { id, label, href };
+});

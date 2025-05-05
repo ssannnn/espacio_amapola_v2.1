@@ -1,9 +1,8 @@
+"use client";
 
-"use client"
-
-import { useRef } from "react"
-import Image from "next/image"
-import Link from "next/link"
+import { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
@@ -14,7 +13,8 @@ const services = [
   },
   {
     title: "En Pareja",
-    description: "Encuentros para prepararse junto a tu pareja o acompañante para la llegada del bebé.",
+    description:
+      "Encuentros para prepararse junto a tu pareja o acompañante para la llegada del bebé.",
     image: "/en_pareja_1.webp",
   },
   {
@@ -23,10 +23,10 @@ const services = [
       "Apoyo especializado para el período posterior al nacimiento, enfocado en la lactancia y el destete.",
     image: "/postparto_1.webp",
   },
-]
+];
 
 export default function Services() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
 
   return (
     <section
@@ -36,9 +36,12 @@ export default function Services() {
     >
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Acompañamiento Integral</h2>
+          <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">
+            Acompañamiento Integral
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-neutral-600">
-            Desde el embarazo hasta el postparto con propuestas personalizadas, disponibles de manera presencial u online.
+            Desde el embarazo hasta el postparto con propuestas personalizadas,
+            disponibles de manera presencial u online.
           </p>
         </div>
 
@@ -58,8 +61,10 @@ export default function Services() {
 
             <div className="absolute inset-0 flex flex-col justify-between p-8 text-white">
               <div className="flex justify-between">
-                <h3 className="text-xl md:text-3xl">Encuentros semanales para embarazadas</h3>
-                
+                <h3 className="text-xl md:text-3xl">
+                  Encuentros semanales para embarazadas
+                </h3>
+
                 {/* Location indicator */}
                 <div className="flex items-center gap-2 rounded-full bg-white/20 px-3 py-1 text-sm backdrop-blur-sm">
                   <svg
@@ -86,11 +91,13 @@ export default function Services() {
                 <div className="flex-1 md:max-w-[50%]">
                   <h4 className="hidden md:block md:text-2xl mb-4">
                     Habitando mí cuerpo
-                 </h4>
+                  </h4>
                   <p className="mb-6 text-sm md:text-lg text-neutral-200">
-                    Trabajamos con movimientos suaves y conscientes para aliviar tensiones, desde la esferodinamia,
-                    el método de Frida Kaplan, hipnoparto, centros de energía y visualizaciones,
-                    para conectar con tu bebé y preparar tu cuerpo para el trabajo de parto y parto.
+                    Trabajamos con movimientos suaves y conscientes para aliviar
+                    tensiones, desde la esferodinamia, el método de Frida
+                    Kaplan, hipnoparto, centros de energía y visualizaciones,
+                    para conectar con tu bebé y preparar tu cuerpo para el
+                    trabajo de parto y parto.
                   </p>
                   <button className="rounded-full text-sm bg-orange-500 px-6 py-3 text-white hover:bg-orange-600">
                     <Link href="/services">Conocer Más</Link>
@@ -115,7 +122,9 @@ export default function Services() {
                     {/* Overlay with location label */}
                     <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-3 text-center text-sm text-white backdrop-blur-sm z-10">
                       <div className="font-medium">Arenales al 1900, CABA</div>
-                      <div className="mt-1 text-xs text-neutral-300">Sesiones semanales disponibles</div>
+                      <div className="mt-1 text-xs text-neutral-300">
+                        Sesiones semanales disponibles
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -129,14 +138,25 @@ export default function Services() {
           {services.map((service, index) => (
             <div key={index} className="group relative">
               <div className="relative h-80 overflow-hidden rounded-3xl shadow-lg">
-                <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
                 <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
                   <h3 className="text-xl md:text-2xl">{service.title}</h3>
                   <div>
-                    <p className="mb-4 text-sm md:text-base text-neutral-200">{service.description}</p>
+                    <p className="mb-4 text-sm md:text-base text-neutral-200">
+                      {service.description}
+                    </p>
                     <button className="rounded-full bg-orange-500 px-4 py-2 text-sm text-white hover:bg-orange-600">
-                      <Link href={`/services#${service.title.toLowerCase().replace(" ", "-")}`}>Conocer Más</Link>
+                      <Link
+                        href={`/services#${service.title.toLowerCase().replace(" ", "-")}`}
+                      >
+                        Conocer Más
+                      </Link>
                     </button>
                   </div>
                 </div>
@@ -146,6 +166,5 @@ export default function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-

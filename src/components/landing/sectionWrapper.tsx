@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { ReactNode } from "react"
-import { motion } from "framer-motion"
-import { fadeUp } from "@/src/lib/motion"
+import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { fadeUp } from "@/src/lib/motion";
 
 /**
  * Wraps a section so that:
@@ -13,8 +13,8 @@ export function SectionWrapper({
   id,
   children,
 }: {
-  id: string
-  children: ReactNode
+  id: string;
+  children: ReactNode;
 }) {
   return (
     <>
@@ -35,5 +35,5 @@ export function SectionWrapper({
         {children}
       </section>
     </>
-  )
+  );
 }

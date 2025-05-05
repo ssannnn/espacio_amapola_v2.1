@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { menuItems } from "./menuItems"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { menuItems } from "./menuItems";
 
 // Wrap Next.js Link with Framer Motion to animate the <a> it renders
-const MotionLink = motion(Link)
+const MotionLink = motion(Link);
 
 export default function DesktopMenu({ onSelect }: { onSelect?: () => void }) {
-  const handleClick = () => onSelect?.()
-  const pathname = usePathname()
-  const isActive = (href: string) => pathname === href
+  const handleClick = () => onSelect?.();
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
 
   return (
     <div className="hidden md:flex md:items-center md:space-x-8">
@@ -38,5 +38,5 @@ export default function DesktopMenu({ onSelect }: { onSelect?: () => void }) {
         </MotionLink>
       ))}
     </div>
-  )
+  );
 }

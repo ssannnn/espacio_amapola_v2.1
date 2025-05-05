@@ -1,57 +1,63 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useRef, useState } from "react"
-import { Button } from "@/src/components/ui/button"
-import { Input } from "@/src/components/ui/input"
-import { Textarea } from "@/src/components/ui/textarea"
-import { Label } from "@/src/components/ui/label"
-import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import { useRef, useState } from "react";
+import { Button } from "@/src/components/ui/button";
+import { Input } from "@/src/components/ui/input";
+import { Textarea } from "@/src/components/ui/textarea";
+import { Label } from "@/src/components/ui/label";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
-const whatsappHref = `https://wa.me/${whatsappNumber}`
+const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
 export default function Contact() {
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 })
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8],
+  );
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [focusedField, setFocusedField] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormData({ name: "", email: "", phone: "", message: "" })
-    }, 1500)
-  }
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    }, 1500);
+  };
 
   return (
     <section
@@ -77,7 +83,10 @@ export default function Contact() {
         <div className="absolute bottom-0 left-1/3 w-40 h-40 rounded-full bg-orange-100 opacity-10"></div>
       </div>
 
-      <motion.div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8" style={{ y, opacity, scale }}>
+      <motion.div
+        className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ y, opacity, scale }}
+      >
         <motion.div
           className="mb-12 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +96,9 @@ export default function Contact() {
           <motion.span
             className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm text-orange-600"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
             transition={{ duration: 0.3, delay: 0.1 }}
           >
             Contacto
@@ -128,7 +139,9 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg text-neutral-900">WhatsApp (Preferido)</h3>
+                  <h3 className="text-lg text-neutral-900">
+                    WhatsApp (Preferido)
+                  </h3>
                   <a
                     href={whatsappHref}
                     className="mt-1 text-[#25D366] font-medium hover:text-[#128C7E] transition-colors"
@@ -137,12 +150,17 @@ export default function Contact() {
                   >
                     Contactar por WhatsApp
                     <br />
-                    <span className="text-neutral-600 font-normal">Respuesta rápida, disponible 7 días</span>
+                    <span className="text-neutral-600 font-normal">
+                      Respuesta rápida, disponible 7 días
+                    </span>
                   </a>
                 </div>
               </motion.div>
 
-              <motion.div className="flex items-start gap-4" whileHover={{ scale: 1.05, x: 10 }}>
+              <motion.div
+                className="flex items-start gap-4"
+                whileHover={{ scale: 1.05, x: 10 }}
+              >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-100 text-orange-500">
                   {/* Email icon */}
                   <svg
@@ -162,7 +180,9 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg text-neutral-900">Envíame un e-mail</h3>
+                  <h3 className="text-lg text-neutral-900">
+                    Envíame un e-mail
+                  </h3>
                   <p className="mt-1 text-neutral-600">
                     espacioamapola@hotmail.com
                     <br />
@@ -194,7 +214,12 @@ export default function Contact() {
                     className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-green-500"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.2 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 20,
+                      delay: 0.2,
+                    }}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -226,7 +251,8 @@ export default function Contact() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.4 }}
                   >
-                    Tu mensaje ha sido recibido. Me pondré en contacto lo antes posible.
+                    Tu mensaje ha sido recibido. Me pondré en contacto lo antes
+                    posible.
                   </motion.p>
                   <motion.button
                     className="mt-8 rounded-full bg-orange-500 px-6 py-2 text-white hover:bg-orange-600"
@@ -243,10 +269,17 @@ export default function Contact() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-base md:text-lg font-medium">
+                    <Label
+                      htmlFor="name"
+                      className="text-base md:text-lg font-medium"
+                    >
                       Nombre Completo
                     </Label>
-                    <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div
+                      className="relative"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <Input
                         id="name"
                         name="name"
@@ -256,7 +289,9 @@ export default function Contact() {
                         onFocus={() => setFocusedField("name")}
                         onBlur={() => setFocusedField(null)}
                         className={`h-12 rounded-xl border-2 transition-all duration-300 ${
-                          focusedField === "name" ? "border-orange-500 ring-2 ring-orange-200" : "border-neutral-200"
+                          focusedField === "name"
+                            ? "border-orange-500 ring-2 ring-orange-200"
+                            : "border-neutral-200"
                         }`}
                         required
                       />
@@ -264,10 +299,17 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-base md:text-lg font-medium">
+                    <Label
+                      htmlFor="email"
+                      className="text-base md:text-lg font-medium"
+                    >
                       Correo Electrónico
                     </Label>
-                    <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div
+                      className="relative"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <Input
                         id="email"
                         name="email"
@@ -278,7 +320,9 @@ export default function Contact() {
                         onFocus={() => setFocusedField("email")}
                         onBlur={() => setFocusedField(null)}
                         className={`h-12 rounded-xl border-2 transition-all duration-300 ${
-                          focusedField === "email" ? "border-orange-500 ring-2 ring-orange-200" : "border-neutral-200"
+                          focusedField === "email"
+                            ? "border-orange-500 ring-2 ring-orange-200"
+                            : "border-neutral-200"
                         }`}
                         required
                       />
@@ -286,10 +330,17 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-base md:text-lg font-medium">
+                    <Label
+                      htmlFor="phone"
+                      className="text-base md:text-lg font-medium"
+                    >
                       Número de Teléfono
                     </Label>
-                    <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div
+                      className="relative"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <Input
                         id="phone"
                         name="phone"
@@ -300,17 +351,26 @@ export default function Contact() {
                         onFocus={() => setFocusedField("phone")}
                         onBlur={() => setFocusedField(null)}
                         className={`h-12 rounded-xl border-2 transition-all duration-300 ${
-                          focusedField === "phone" ? "border-orange-500 ring-2 ring-orange-200" : "border-neutral-200"
+                          focusedField === "phone"
+                            ? "border-orange-500 ring-2 ring-orange-200"
+                            : "border-neutral-200"
                         }`}
                       />
                     </motion.div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message" className="text-base md:text-lg font-medium">
+                    <Label
+                      htmlFor="message"
+                      className="text-base md:text-lg font-medium"
+                    >
                       Mensaje
                     </Label>
-                    <motion.div className="relative" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                    <motion.div
+                      className="relative"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
                       <Textarea
                         id="message"
                         name="message"
@@ -321,20 +381,27 @@ export default function Contact() {
                         onFocus={() => setFocusedField("message")}
                         onBlur={() => setFocusedField(null)}
                         className={`rounded-xl border-2 transition-all duration-300 ${
-                          focusedField === "message" ? "border-orange-500 ring-2 ring-orange-200" : "border-neutral-200"
+                          focusedField === "message"
+                            ? "border-orange-500 ring-2 ring-orange-200"
+                            : "border-neutral-200"
                         }`}
                         required
                       />
                     </motion.div>
                   </div>
 
-                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                  >
                     <Button
                       type="submit"
                       className="w-full rounded-xl bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
                       disabled={isSubmitting}
                     >
-                      <span className="relative z-10">{isSubmitting ? "Enviando..." : "Enviar Mensaje"}</span>
+                      <span className="relative z-10">
+                        {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                      </span>
                       {isSubmitting && (
                         <motion.span
                           className="absolute inset-0 bg-orange-600"
@@ -346,7 +413,9 @@ export default function Contact() {
                     </Button>
                   </motion.div>
                   <div className="md:col-span-2 mt-4 text-center">
-                    <p className="text-neutral-600 mb-2 text-base md:text-lg">O si prefieres una respuesta más rápida:</p>
+                    <p className="text-neutral-600 mb-2 text-base md:text-lg">
+                      O si prefieres una respuesta más rápida:
+                    </p>
                     <Button
                       variant="outline"
                       className="rounded-full border-2 border-[#25D366] px-6 py-3 text-[#25D366] hover:bg-[#25D366]/10"
@@ -382,5 +451,5 @@ export default function Contact() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

@@ -1,46 +1,58 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { motion, useInView, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react";
+import Image from "next/image";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 export default function Approach() {
-  const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 })
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8])
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8],
+  );
 
   const steps = [
     {
       number: 1,
       title: "Personalized Care Plans",
-      description: "I create individualized care plans tailored to your specific needs and preferences.",
+      description:
+        "I create individualized care plans tailored to your specific needs and preferences.",
     },
     {
       number: 2,
       title: "Evidence-Based Practices",
-      description: "My methods are grounded in the latest research and proven techniques in maternal care.",
+      description:
+        "My methods are grounded in the latest research and proven techniques in maternal care.",
     },
     {
       number: 3,
       title: "Continuous Support",
-      description: "I provide ongoing support throughout your pregnancy journey and into early parenthood.",
+      description:
+        "I provide ongoing support throughout your pregnancy journey and into early parenthood.",
     },
     {
       number: 4,
       title: "Flexible Consultation Options",
-      description: "I offer both online virtual consultations and in-person sessions at my dedicated space.",
+      description:
+        "I offer both online virtual consultations and in-person sessions at my dedicated space.",
     },
-  ]
+  ];
 
   return (
-    <section id="approach" ref={containerRef} className="relative min-h-screen overflow-hidden bg-white py-20">
+    <section
+      id="approach"
+      ref={containerRef}
+      className="relative min-h-screen overflow-hidden bg-white py-20"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <motion.div
@@ -57,7 +69,10 @@ export default function Approach() {
         />
       </div>
 
-      <motion.div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8" style={{ y, opacity, scale }}>
+      <motion.div
+        className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ y, opacity, scale }}
+      >
         <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -67,7 +82,9 @@ export default function Approach() {
           <motion.span
             className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+            }
             transition={{ duration: 0.3, delay: 0.1 }}
           >
             My Approach
@@ -86,7 +103,8 @@ export default function Approach() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            I believe in holistic care that addresses the physical, emotional, and social needs of mothers
+            I believe in holistic care that addresses the physical, emotional,
+            and social needs of mothers
           </motion.p>
         </motion.div>
 
@@ -103,7 +121,9 @@ export default function Approach() {
                   key={index}
                   className="relative mb-16 last:mb-0"
                   initial={{ opacity: 0, x: -50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                  animate={
+                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }
+                  }
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                   whileHover={{ scale: 1.02, x: 10 }}
                 >
@@ -119,7 +139,11 @@ export default function Approach() {
                         className="absolute -left-12 flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white"
                         initial={{ scale: 0 }}
                         animate={isInView ? { scale: 1 } : { scale: 0 }}
-                        transition={{ type: "spring", stiffness: 300, delay: 0.4 + index * 0.2 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          delay: 0.4 + index * 0.2,
+                        }}
                       >
                         {step.number}
                       </motion.div>
@@ -144,7 +168,12 @@ export default function Approach() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="relative h-full w-full">
-                <Image src="/placeholder.svg?height=800&width=800" alt="Approach video" fill className="object-cover" />
+                <Image
+                  src="/placeholder.svg?height=800&width=800"
+                  alt="Approach video"
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
                     className="flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-white"
@@ -174,5 +203,5 @@ export default function Approach() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

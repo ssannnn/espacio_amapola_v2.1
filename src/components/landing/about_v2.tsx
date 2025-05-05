@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { Button } from "@/src/components/ui/button"
+import { useRef } from "react";
+import Image from "next/image";
+import { Button } from "@/src/components/ui/button";
 
 export default function About() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
 
   const certifications = [
     {
@@ -53,10 +53,14 @@ export default function About() {
       certification: "Prof. de HIPNOPARTO B",
       logoUrl: "/parto-positivo.webp",
     },
-  ]
+  ];
 
   return (
-    <section id="about" ref={containerRef} className="relative overflow-hidden bg-white py-12 md:py-20">
+    <section
+      id="about"
+      ref={containerRef}
+      className="relative overflow-hidden bg-white py-12 md:py-20"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-white via-orange-50/30 to-orange-100/20" />
 
@@ -78,7 +82,9 @@ export default function About() {
             <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600">
               Sobre mi
             </span>
-            <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Hola! Soy Rochi</h2>
+            <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">
+              Hola! Soy Rochi
+            </h2>
           </div>
 
           {/* Main content grid - profile and text side by side */}
@@ -126,7 +132,8 @@ export default function About() {
                     <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                   </svg>
                   <p className="relative text-base font-medium text-neutral-800 md:text-xl">
-                    Soy doula y puericultora, dedicada a acompañar familias en el camino de la maternidad y paternidad.
+                    Soy doula y puericultora, dedicada a acompañar familias en
+                    el camino de la maternidad y paternidad.
                   </p>
                 </div>
               </div>
@@ -134,9 +141,11 @@ export default function About() {
               {/* Content text */}
               <div className="space-y-4">
                 <p className="text-sm text-neutral-700 md:text-lg">
-                  Pienso que abrazar la maternidad es abrazarse a uno mismo, al bebé, a la familia, con lo que uno es,
-                  quiere y puede dar. Desde muy joven me sentí atraída por el mundo de la maternidad, creciendo en una
-                  familia numerosa rodeada de embarazos y nacimientos.
+                  Pienso que abrazar la maternidad es abrazarse a uno mismo, al
+                  bebé, a la familia, con lo que uno es, quiere y puede dar.
+                  Desde muy joven me sentí atraída por el mundo de la
+                  maternidad, creciendo en una familia numerosa rodeada de
+                  embarazos y nacimientos.
                 </p>
 
                 {/* Espacio Amapola card with subtle hover effect on desktop */}
@@ -144,17 +153,22 @@ export default function About() {
                   {/* Decorative element with subtle movement on desktop */}
                   <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-orange-200 opacity-30 blur-xl md:animate-[pulse_6s_ease-in-out_infinite]" />
 
-                  <h3 className="mb-2 text-xl font-medium text-neutral-900">Espacio Amapola</h3>
+                  <h3 className="mb-2 text-xl font-medium text-neutral-900">
+                    Espacio Amapola
+                  </h3>
                   <p className="text-neutral-700 text-sm md:text-lg">
-                    Con el tiempo, mi inquietud se convirtió en vocación. Decidí formarme para acompañar a las familias
-                    con conocimientos sólidos, escucha atenta y un enfoque amoroso. Así nació Espacio Amapola, un lugar
-                    donde cada mujer y familia puede encontrar apoyo en su propio camino hacia la maternidad.
+                    Con el tiempo, mi inquietud se convirtió en vocación. Decidí
+                    formarme para acompañar a las familias con conocimientos
+                    sólidos, escucha atenta y un enfoque amoroso. Así nació
+                    Espacio Amapola, un lugar donde cada mujer y familia puede
+                    encontrar apoyo en su propio camino hacia la maternidad.
                   </p>
                 </div>
 
                 <p className="text-sm text-neutral-700 md:text-lg">
-                  Hoy, mi propósito es brindar herramientas y contención para que cada embarazo, nacimiento y posparto
-                  se viva de manera consciente, segura y amorosa.
+                  Hoy, mi propósito es brindar herramientas y contención para
+                  que cada embarazo, nacimiento y posparto se viva de manera
+                  consciente, segura y amorosa.
                 </p>
               </div>
 
@@ -189,7 +203,9 @@ export default function About() {
           {/* Certifications section - now below both profile and text */}
           <div className="mt-16 border-t border-orange-100 pt-12">
             <div className="text-center mb-8">
-              <h3 className="text-2xl text-neutral-900">Formación y Certificaciones</h3>
+              <h3 className="text-2xl text-neutral-900">
+                Formación y Certificaciones
+              </h3>
             </div>
 
             {/* List view only */}
@@ -209,8 +225,12 @@ export default function About() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-medium text-neutral-900">{cert.institution}</h4>
-                    <p className="text-sm text-neutral-600">{cert.certification}</p>
+                    <h4 className="font-medium text-neutral-900">
+                      {cert.institution}
+                    </h4>
+                    <p className="text-sm text-neutral-600">
+                      {cert.certification}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -219,5 +239,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }

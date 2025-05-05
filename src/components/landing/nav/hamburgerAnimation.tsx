@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function Hamburger({
   isOpen,
   toggle,
 }: {
-  isOpen: boolean
-  toggle: () => void
+  isOpen: boolean;
+  toggle: () => void;
 }) {
   return (
     <motion.button
@@ -30,5 +30,5 @@ export default function Hamburger({
         />
       </div>
     </motion.button>
-  )
+  );
 }

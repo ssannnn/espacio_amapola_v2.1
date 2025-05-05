@@ -1,30 +1,34 @@
-"use client"
+"use client";
 
-import { useState, useRef, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { motion, useInView } from "framer-motion"
-import { Button } from "@/src/components/ui/button"
-import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/src/components/ui/accordion"
-import Navigation from "@/src/components/landing/navigation"
-import Footer from "@/src/components/landing/footer"
-import WhatsAppButton from "@/src/components/landing/whatsapp-button"
-import ScrollToTop from "@/src/components/landing/scroll-to-top"
+import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, useInView } from "framer-motion";
+import { Button } from "@/src/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/src/components/ui/accordion";
+import Navigation from "@/src/components/landing/navigation";
+import Footer from "@/src/components/landing/footer";
+import WhatsAppButton from "@/src/components/landing/whatsapp-button";
+import ScrollToTop from "@/src/components/landing/scroll-to-top";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? ""
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
-const whatsappHref = `https://wa.me/${whatsappNumber}`
+const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
 export default function ServicesPage() {
-
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
-  const [activeTab, setActiveTab] = useState("prenatal")
-  const headerRef = useRef(null)
-  const isHeaderInView = useInView(headerRef, { once: false, amount: 0.2 })
+  const [activeTab, setActiveTab] = useState("prenatal");
+  const headerRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: false, amount: 0.2 });
 
   // Service data
   const services = [
@@ -139,7 +143,8 @@ export default function ServicesPage() {
         {
           title: "Camino al Encuentro",
           //price: "$140.000",
-          description: "Encuentros para comprender y transitar el trabajo de parto, parto y la vuelta a casa con confianza y seguridad.",
+          description:
+            "Encuentros para comprender y transitar el trabajo de parto, parto y la vuelta a casa con confianza y seguridad.",
           included: [
             "4 encuentros de 1 hora",
             "Frecuencia semanal",
@@ -152,7 +157,8 @@ export default function ServicesPage() {
         {
           title: "Habitando mi Cuerpo",
           //price: "$130.000",
-          description: "Movimientos suaves y conscientes para aliviar tensiones y preparar tu cuerpo para el trabajo de parto y parto.",
+          description:
+            "Movimientos suaves y conscientes para aliviar tensiones y preparar tu cuerpo para el trabajo de parto y parto.",
           included: [
             "A partir de la semana 14 de embarazo",
             "Sesiones de 1 hora y 15 minutos",
@@ -167,7 +173,8 @@ export default function ServicesPage() {
         {
           title: "El Arte de Amamantar",
           //price: "$35.000",
-          description: "Encuentro sobre lactancia y tips para los primeros días.",
+          description:
+            "Encuentro sobre lactancia y tips para los primeros días.",
           included: [
             "1 encuentro",
             "Duración de 1 hora y 15 minutos aproximadamente",
@@ -204,7 +211,7 @@ export default function ServicesPage() {
       ],
       testimonial: {
         quote:
-            "No duden en regalarse este espacio, es un mimo y una lindísima forma de transitar el embarazo. Para mí fue de quietud y encuentro. Encuentro con mi bebé, con mi cuerpo cambiante, conmigo misma. Rochi habilita este espacio de manera dulce y suave, compartiendo su conocimiento sin imponer. Su acompañamiento me dio mucha tranquilidad y los movimientos que hicimos ayudaron a calmar los dolores del cuerpo propios de esta etapa.",
+          "No duden en regalarse este espacio, es un mimo y una lindísima forma de transitar el embarazo. Para mí fue de quietud y encuentro. Encuentro con mi bebé, con mi cuerpo cambiante, conmigo misma. Rochi habilita este espacio de manera dulce y suave, compartiendo su conocimiento sin imponer. Su acompañamiento me dio mucha tranquilidad y los movimientos que hicimos ayudaron a calmar los dolores del cuerpo propios de esta etapa.",
         name: "Justi, Nico y Simón",
         image: "/chu_simon.webp",
       },
@@ -322,14 +329,15 @@ export default function ServicesPage() {
             "Recursos de corporales",
             "Rol del acompañante",
             "Disponible online o a domicilio en CABA",
-            "Incluye asesoría en lactancia"
+            "Incluye asesoría en lactancia",
           ],
           highlighted: true,
         },
         {
           title: "El Arte de Amamantar",
           //price: "$35.000",
-          description: "Encuentro sobre lactancia, rol del acompañante y tips para los primeros días.",
+          description:
+            "Encuentro sobre lactancia, rol del acompañante y tips para los primeros días.",
           included: [
             "1 Encuentro",
             "Duración de 1 hora y 15 minutos aproximadamente",
@@ -345,7 +353,8 @@ export default function ServicesPage() {
       ],
       faqs: [
         {
-          question: "¿Es necesario que mi pareja asista a todas los encuentros?",
+          question:
+            "¿Es necesario que mi pareja asista a todas los encuentros?",
           answer:
             "Lo ideal es que asista a los 4 encuentros para aprovechar al máximo el programa, pero entendemos que a veces hay compromisos laborales u otras responsabilidades. Siempre se puede intentar reprogramar la fecha.",
         },
@@ -423,7 +432,8 @@ export default function ServicesPage() {
         {
           title: "Asesoría en Lactancia",
           //price: "$60.000",
-          description: "Encuentro personalizado para acompañarte con tu bebé en brazos.",
+          description:
+            "Encuentro personalizado para acompañarte con tu bebé en brazos.",
           included: [
             "Duración entre 1 a 3 horas",
             "Resolución de dificultades como dolor, grietas, mastitis",
@@ -476,7 +486,7 @@ export default function ServicesPage() {
         image: "/male_rufo.webp",
       },
     },
-  ]
+  ];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-50">
@@ -495,7 +505,11 @@ export default function ServicesPage() {
               x: [0, 50, 0],
               y: [0, -30, 0],
             }}
-            transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+            transition={{
+              duration: 15,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+            }}
           />
           <motion.div
             className="absolute -right-20 bottom-1/4 h-96 w-96 rounded-full bg-orange-100 opacity-40 blur-3xl"
@@ -503,7 +517,11 @@ export default function ServicesPage() {
               x: [0, -50, 0],
               y: [0, 30, 0],
             }}
-            transition={{ duration: 18, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
+            transition={{
+              duration: 18,
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "reverse",
+            }}
           />
         </div>
 
@@ -511,13 +529,19 @@ export default function ServicesPage() {
           <motion.div
             className="mb-12 text-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={
+              isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{ duration: 0.6 }}
           >
             <motion.div
               className="mb-4 inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={isHeaderInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+              animate={
+                isHeaderInView
+                  ? { opacity: 1, scale: 1 }
+                  : { opacity: 0, scale: 0.8 }
+              }
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               Propuestas
@@ -525,7 +549,9 @@ export default function ServicesPage() {
             <motion.h1
               className="mb-4 text-4xl text-neutral-900 sm:text-5xl md:text-6xl"
               initial={{ opacity: 0, y: 20 }}
-              animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               Acompañamiento Integral
@@ -533,19 +559,27 @@ export default function ServicesPage() {
             <motion.p
               className="mx-auto max-w-2xl text-base text-neutral-600 md:text-xl"
               initial={{ opacity: 0, y: 20 }}
-              animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Estoy para acompañarte desde el embarazo hasta el postparto, con propuestas pensadas para vos y tu familia.
+              Estoy para acompañarte desde el embarazo hasta el postparto, con
+              propuestas pensadas para vos y tu familia.
             </motion.p>
 
             <motion.div
               className="mt-8 flex justify-center space-x-4"
               initial={{ opacity: 0, y: 20 }}
-              animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={
+                isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+              }
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <Button className="rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
+              <Button
+                className="rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
+                asChild
+              >
                 <Link href="#contact">Reservar tu lugar</Link>
               </Button>
               <Button
@@ -562,10 +596,17 @@ export default function ServicesPage() {
           <motion.div
             className="mx-auto max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
-            animate={isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={
+              isHeaderInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <Tabs defaultValue="prenatal" value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <Tabs
+              defaultValue="prenatal"
+              value={activeTab}
+              onValueChange={setActiveTab}
+              className="w-full"
+            >
               <TabsList className="grid w-full grid-cols-3 rounded-full bg-orange-100/50 p-1">
                 {services.map((service) => (
                   <TabsTrigger
@@ -584,7 +625,11 @@ export default function ServicesPage() {
 
       {/* Service Details Section */}
       {services.map((service) => (
-        <section key={service.id} id={service.id} className={`py-16 ${service.id === activeTab ? "block" : "hidden"}`}>
+        <section
+          key={service.id}
+          id={service.id}
+          className={`py-16 ${service.id === activeTab ? "block" : "hidden"}`}
+        >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* Service Header */}
             <div className="mb-16 grid gap-12 md:grid-cols-2">
@@ -595,11 +640,20 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h2 className="mb-4 text-3xl text-neutral-900 sm:text-4xl">{service.title}</h2>
-                <p className="mb-2 text-lg md:text-xl text-orange-500">{service.subtitle}</p>
-                <p className="mb-6 text-base md:text-lg text-neutral-600">{service.description}</p>
+                <h2 className="mb-4 text-3xl text-neutral-900 sm:text-4xl">
+                  {service.title}
+                </h2>
+                <p className="mb-2 text-lg md:text-xl text-orange-500">
+                  {service.subtitle}
+                </p>
+                <p className="mb-6 text-base md:text-lg text-neutral-600">
+                  {service.description}
+                </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600" asChild>
+                  <Button
+                    className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
+                    asChild
+                  >
                     <Link href="#contact">Reservar</Link>
                   </Button>
                   <Button
@@ -624,8 +678,7 @@ export default function ServicesPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       >
-                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
                       </svg>
                       Consultar por WhatsApp
                     </a>
@@ -640,7 +693,12 @@ export default function ServicesPage() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <Image src={service.image || "/placeholder.svg"} alt={service.title} fill className="object-cover" />
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
               </motion.div>
             </div>
 
@@ -652,30 +710,41 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Propuestas</h2>
+              <h2 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">
+                Propuestas
+              </h2>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {service.pricing.map((plan, index) => (
                   <motion.div
                     key={index}
                     className={`flex flex-col rounded-xl bg-white p-6 shadow-md ${
-                      plan.highlighted ? "border-2 border-orange-500 shadow-orange-100" : ""
+                      plan.highlighted
+                        ? "border-2 border-orange-500 shadow-orange-100"
+                        : ""
                     }`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
+                    }}
                   >
                     {plan.highlighted && (
                       <span className="mb-4 inline-block self-start rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-600">
                         Destacado
                       </span>
                     )}
-                    <h4 className="mb-2 text-xl text-neutral-900">{plan.title}</h4>
+                    <h4 className="mb-2 text-xl text-neutral-900">
+                      {plan.title}
+                    </h4>
                     <p className="mb-4 text-3xl text-orange-500">{}</p>
                     <p className="mb-6 text-neutral-600">{plan.description}</p>
                     <div className="mb-6 flex-grow">
-                      <p className="mb-2 font-medium text-neutral-900">Incluye:</p>
+                      <p className="mb-2 font-medium text-neutral-900">
+                        Incluye:
+                      </p>
                       <ul className="space-y-2">
                         {plan.included.map((item, i) => (
                           <li key={i} className="flex items-start">
@@ -717,7 +786,9 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Qué Incluye</h3>
+              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">
+                Qué Incluye
+              </h3>
               <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {service.features.map((feature, index) => (
                   <motion.div
@@ -727,18 +798,22 @@ export default function ServicesPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ y: -5, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)" }}
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.1)",
+                    }}
                   >
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-orange-100">
                       {feature.icon}
                     </div>
-                    <h4 className="mb-2 text-lg text-neutral-900">{feature.title}</h4>
+                    <h4 className="mb-2 text-lg text-neutral-900">
+                      {feature.title}
+                    </h4>
                     <p className="text-neutral-600">{feature.description}</p>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
-
 
             {/* Testimonial */}
             <motion.div
@@ -761,7 +836,9 @@ export default function ServicesPage() {
                     />
                   </div>
                 </div>
-                <p className="mb-6 text-base md:text-xl italic leading-relaxed text-neutral-700">{service.testimonial.quote}</p>
+                <p className="mb-6 text-base md:text-xl italic leading-relaxed text-neutral-700">
+                  {service.testimonial.quote}
+                </p>
                 <div className="text-center">
                   <p className="text-orange-500">{service.testimonial.name}</p>
                 </div>
@@ -776,7 +853,9 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">Preguntas Frecuentes</h3>
+              <h3 className="mb-8 text-center text-2xl text-neutral-900 sm:text-3xl">
+                Preguntas Frecuentes
+              </h3>
               <div className="mx-auto max-w-3xl">
                 <Accordion type="single" collapsible className="w-full">
                   {service.faqs.map((faq, index) => (
@@ -784,7 +863,9 @@ export default function ServicesPage() {
                       <AccordionTrigger className="text-left text-lg font-light text-neutral-900">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-neutral-600">{faq.answer}</AccordionContent>
+                      <AccordionContent className="text-neutral-600">
+                        {faq.answer}
+                      </AccordionContent>
                     </AccordionItem>
                   ))}
                 </Accordion>
@@ -801,7 +882,7 @@ export default function ServicesPage() {
             >
               <h3 className="mb-4 text-2xl sm:text-3xl">¿Estas interesada?</h3>
               <p className="mb-6 text-base md:text-lg text-white/90">
-              Contactame para despejar las dudas que tengas
+                Contactame para despejar las dudas que tengas
               </p>
               <Button
                 className="rounded-full bg-white px-8 py-3 text-base md:text-lg font-light text-orange-500 hover:bg-white/90"
@@ -849,7 +930,8 @@ export default function ServicesPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              Estoy disponible para responder tus dudas y ayudarte a reservar. Te invito a escribirme por WhatsApp o a completar el formulario.
+              Estoy disponible para responder tus dudas y ayudarte a reservar.
+              Te invito a escribirme por WhatsApp o a completar el formulario.
             </motion.p>
           </motion.div>
 
@@ -874,16 +956,19 @@ export default function ServicesPage() {
                       className="h-10 w-10"
                     >
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-
                     </svg>
                   </div>
                 </div>
                 <h3 className="mb-4 text-center text-2xl">Contacto Directo</h3>
                 <p className="mb-6 text-center">
-                  Para una respuesta más rápida, contáctame directamente por WhatsApp.
+                  Para una respuesta más rápida, contáctame directamente por
+                  WhatsApp.
                 </p>
                 <div className="flex justify-center">
-                  <Button className="w-full rounded-full bg-white px-6 py-3 text-[#25D366] hover:bg-white/90" asChild>
+                  <Button
+                    className="w-full rounded-full bg-white px-6 py-3 text-[#25D366] hover:bg-white/90"
+                    asChild
+                  >
                     <a
                       href={whatsappHref}
                       target="_blank"
@@ -902,7 +987,6 @@ export default function ServicesPage() {
                         strokeLinejoin="round"
                       >
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
-
                       </svg>
                       Enviar Mensaje
                     </a>
@@ -922,7 +1006,10 @@ export default function ServicesPage() {
               <div className="rounded-2xl bg-white p-8 shadow-lg">
                 <form className="grid gap-6 md:grid-cols-2">
                   <div className="md:col-span-1">
-                    <label htmlFor="name" className="mb-2 block text-sm font-medium text-neutral-900">
+                    <label
+                      htmlFor="name"
+                      className="mb-2 block text-sm font-medium text-neutral-900"
+                    >
                       Nombre Completo
                     </label>
                     <input
@@ -934,7 +1021,10 @@ export default function ServicesPage() {
                     />
                   </div>
                   <div className="md:col-span-1">
-                    <label htmlFor="email" className="mb-2 block text-sm font-medium text-neutral-900">
+                    <label
+                      htmlFor="email"
+                      className="mb-2 block text-sm font-medium text-neutral-900"
+                    >
                       Email
                     </label>
                     <input
@@ -946,7 +1036,10 @@ export default function ServicesPage() {
                     />
                   </div>
                   <div className="md:col-span-1">
-                    <label htmlFor="phone" className="mb-2 block text-sm font-medium text-neutral-900">
+                    <label
+                      htmlFor="phone"
+                      className="mb-2 block text-sm font-medium text-neutral-900"
+                    >
                       Teléfono
                     </label>
                     <input
@@ -957,7 +1050,10 @@ export default function ServicesPage() {
                     />
                   </div>
                   <div className="md:col-span-1">
-                    <label htmlFor="service" className="mb-2 block text-sm font-medium text-neutral-900">
+                    <label
+                      htmlFor="service"
+                      className="mb-2 block text-sm font-medium text-neutral-900"
+                    >
                       Servicio de Interés
                     </label>
                     <select
@@ -966,15 +1062,26 @@ export default function ServicesPage() {
                       required
                     >
                       <option value="">Selecciona un servicio</option>
-                      <option value="camino-encuentro">Camino al Encuentro</option>
-                      <option value="habitando-cuerpo">Habitando mi Cuerpo</option>
-                      <option value="arte-amamantar">El Arte de Amamantar</option>
-                      <option value="asesoria-lactancia">Asesoría en Lactancia</option>
+                      <option value="camino-encuentro">
+                        Camino al Encuentro
+                      </option>
+                      <option value="habitando-cuerpo">
+                        Habitando mi Cuerpo
+                      </option>
+                      <option value="arte-amamantar">
+                        El Arte de Amamantar
+                      </option>
+                      <option value="asesoria-lactancia">
+                        Asesoría en Lactancia
+                      </option>
                       <option value="destete">Destete</option>
                     </select>
                   </div>
                   <div className="md:col-span-2">
-                    <label htmlFor="message" className="mb-2 block text-sm font-medium text-neutral-900">
+                    <label
+                      htmlFor="message"
+                      className="mb-2 block text-sm font-medium text-neutral-900"
+                    >
                       Mensaje
                     </label>
                     <textarea
@@ -1002,5 +1109,5 @@ export default function ServicesPage() {
       <Footer />
       <ScrollToTop />
     </main>
-  )
+  );
 }

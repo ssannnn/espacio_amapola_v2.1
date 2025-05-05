@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { navSlide } from "@/src/lib/motion"
-import useScrollPosition from "@/src/hooks/useScrollPosition"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { navSlide } from "@/src/lib/motion";
+import useScrollPosition from "@/src/hooks/useScrollPosition";
 
-import Logo from "./nav/logo"
-import DesktopMenu from "./nav/desktopMenu"
-import Hamburger from "./nav/hamburgerAnimation"
-import MobileMenu from "./nav/mobileMenu"
+import Logo from "./nav/logo";
+import DesktopMenu from "./nav/desktopMenu";
+import Hamburger from "./nav/hamburgerAnimation";
+import MobileMenu from "./nav/mobileMenu";
 
 export default function Navigation() {
-  const scrolled = useScrollPosition(50)
-  const [isOpen, setIsOpen] = useState(false)
+  const scrolled = useScrollPosition(50);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <motion.nav
@@ -31,5 +31,5 @@ export default function Navigation() {
 
       <MobileMenu isOpen={isOpen} onSelect={() => setIsOpen(false)} />
     </motion.nav>
-  )
+  );
 }

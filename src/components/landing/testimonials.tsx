@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useRef } from "react"
-import Image from "next/image"
+import { useState, useRef } from "react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -69,45 +69,53 @@ const testimonials = [
     rating: 5,
     category: "Lactancia",
   },
-]
+];
 
 export default function Testimonials() {
-  const containerRef = useRef(null)
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [dragging, setDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
-  const [currentX, setCurrentX] = useState(0)
+  const containerRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [dragging, setDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
-    setDragging(true)
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX
-    setStartX(clientX)
-    setCurrentX(clientX)
-  }
+    setDragging(true);
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    setStartX(clientX);
+    setCurrentX(clientX);
+  };
 
   const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!dragging) return
-    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX
-    setCurrentX(clientX)
-  }
+    if (!dragging) return;
+    const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
+    setCurrentX(clientX);
+  };
 
   const handleDragEnd = () => {
-    if (!dragging) return
-    setDragging(false)
-    const diff = startX - currentX
+    if (!dragging) return;
+    setDragging(false);
+    const diff = startX - currentX;
     if (Math.abs(diff) > 50) {
       if (diff > 0) {
         // Swiped left
-        setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))
+        setActiveIndex((prev) =>
+          prev === testimonials.length - 1 ? 0 : prev + 1,
+        );
       } else {
         // Swiped right
-        setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))
+        setActiveIndex((prev) =>
+          prev === 0 ? testimonials.length - 1 : prev - 1,
+        );
       }
     }
-  }
+  };
 
   return (
-    <section id="testimonials" ref={containerRef} className="relative overflow-hidden bg-neutral-50 py-10 md:py-16">
+    <section
+      id="testimonials"
+      ref={containerRef}
+      className="relative overflow-hidden bg-neutral-50 py-10 md:py-16"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <svg
@@ -118,7 +126,10 @@ export default function Testimonials() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M0,0 C30,40 70,60 100,30 L100,100 L0,100 Z" fill="#FEF8F4" />
-          <path d="M0,100 C20,60 50,30 100,70 L100,100 L0,100 Z" fill="#FDEEE4" />
+          <path
+            d="M0,100 C20,60 50,30 100,70 L100,100 L0,100 Z"
+            fill="#FDEEE4"
+          />
         </svg>
       </div>
 
@@ -127,7 +138,9 @@ export default function Testimonials() {
           <span className="inline-block rounded-full bg-orange-100 px-4 py-1 text-sm font-medium text-orange-600">
             Testimonios
           </span>
-          <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">Experiencias de Familias</h2>
+          <h2 className="mt-4 text-4xl tracking-tight text-neutral-900 sm:text-5xl">
+            Experiencias de Familias
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-neutral-600">
             Testimonios de familias que me permitieron ser parte de su camino.
           </p>
@@ -154,7 +167,9 @@ export default function Testimonials() {
                   <div className="flex items-center gap-4">
                     <div className="relative h-16 w-16 md:h-24 md:w-24 overflow-hidden rounded-full border-2 border-white shadow-md sm:h-20 sm:w-20 md:transition-all md:duration-300 md:hover:scale-105">
                       <Image
-                        src={testimonials[activeIndex].avatar || "/placeholder.svg"}
+                        src={
+                          testimonials[activeIndex].avatar || "/placeholder.svg"
+                        }
                         alt={testimonials[activeIndex].name}
                         width={80}
                         height={80}
@@ -162,8 +177,12 @@ export default function Testimonials() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-neutral-900">{testimonials[activeIndex].name}</h3>
-                      <p className="text-sm text-orange-500">{testimonials[activeIndex].role}</p>
+                      <h3 className="text-neutral-900">
+                        {testimonials[activeIndex].name}
+                      </h3>
+                      <p className="text-sm text-orange-500">
+                        {testimonials[activeIndex].role}
+                      </p>
                     </div>
                   </div>
                   <span className="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-orange-600 md:transition-all md:duration-300 md:hover:bg-orange-200">
@@ -174,7 +193,11 @@ export default function Testimonials() {
                 {/* Quote content */}
                 <div className="flex flex-col p-6">
                   <div className="mb-4">
-                    <svg className="h-6 w-6 text-orange-200 md:animate-pulse" fill="currentColor" viewBox="0 0 32 32">
+                    <svg
+                      className="h-6 w-6 text-orange-200 md:animate-pulse"
+                      fill="currentColor"
+                      viewBox="0 0 32 32"
+                    >
                       <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                     </svg>
                   </div>
@@ -191,7 +214,11 @@ export default function Testimonials() {
                         width="16"
                         height="16"
                         viewBox="0 0 24 24"
-                        fill={i < testimonials[activeIndex].rating ? "currentColor" : "none"}
+                        fill={
+                          i < testimonials[activeIndex].rating
+                            ? "currentColor"
+                            : "none"
+                        }
                         stroke="currentColor"
                         strokeWidth="2"
                         strokeLinecap="round"
@@ -211,7 +238,11 @@ export default function Testimonials() {
             <div className="mt-6 flex items-center justify-between px-4">
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
-                onClick={() => setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1))}
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    prev === 0 ? testimonials.length - 1 : prev - 1,
+                  )
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +267,11 @@ export default function Testimonials() {
 
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
-                onClick={() => setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1))}
+                onClick={() =>
+                  setActiveIndex((prev) =>
+                    prev === testimonials.length - 1 ? 0 : prev + 1,
+                  )
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -278,5 +313,5 @@ export default function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

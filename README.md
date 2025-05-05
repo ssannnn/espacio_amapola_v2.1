@@ -1,6 +1,6 @@
 # Espacio Amapola Landing Page
 
-A modern and accessible landing page for **Espacio Amapola**, a maternal-infant support service. This site showcases service offerings (*Prenatal*, *Couples Sessions*, *Postpartum*), real testimonials, an About Me section with the lead professional, an FAQ, and a direct contact form via WhatsApp.
+A modern and accessible landing page for **Espacio Amapola**, a maternal-infant support service. This site showcases service offerings (_Prenatal_, _Couples Sessions_, _Postpartum_), real testimonials, an About Me section with the lead professional, an FAQ, and a direct contact form via WhatsApp.
 
 ---
 
@@ -108,7 +108,7 @@ The landing page is designed to convey warmth and trust, inviting visitors to ex
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── sections.ts       # Definitions for homepage sections
-├── components/           
+├── components/
 │   ├── landing/          # Section components (Hero, Services, etc.)
 │   └── ui/               # Design system components (Buttons, Inputs…)
 ├── public/               # Static assets (images, icons, etc.)
