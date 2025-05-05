@@ -1,14 +1,14 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { motion } from "framer-motion";
 
-export default function Hamburger({
-  isOpen,
-  toggle,
-}: {
+interface HamburgerProps {
   isOpen: boolean;
   toggle: () => void;
-}) {
+}
+
+export default function Hamburger({ isOpen, toggle }: HamburgerProps): ReactElement {
   return (
     <motion.button
       className="relative z-50 block md:hidden"

@@ -4,18 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { menuItems } from "./menuItems";
+import type { FC } from "react";
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramUrl: string = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramHref: string = instagramUrl;
 
-const instagramHref = instagramUrl;
-
-export default function MobileMenu({
-  isOpen,
-  onSelect,
-}: {
+interface MobileMenuProps {
   isOpen: boolean;
   onSelect: () => void;
-}) {
+}
+
+const MobileMenu: FC<MobileMenuProps> = ({ isOpen, onSelect }) => {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -125,4 +124,6 @@ export default function MobileMenu({
       )}
     </AnimatePresence>
   );
-}
+};
+
+export default MobileMenu;
