@@ -1,6 +1,6 @@
 # Espacio Amapola Landing Page
 
-A modern and accessible landing page for **Espacio Amapola**, a maternal-infant support service. This site showcases service offerings (_Prenatal_, _Couples Sessions_, _Postpartum_), real testimonials, an About Me section with the lead professional, an FAQ, and a direct contact form via WhatsApp.
+A modern, responsive, and accessible landing page for **Espacio Amapola**, specializing in maternal-infant support. Visitors can explore service offerings (Prenatal, Couples Sessions, Postpartum), read authentic testimonials, learn about the lead professional, browse FAQs, and get in touch via WhatsApp.
 
 ---
 
@@ -17,7 +17,7 @@ A modern and accessible landing page for **Espacio Amapola**, a maternal-infant 
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Environment Variables](#environment-variables)
-    - [Running in Development](#running-in-development)
+    - [Development](#development)
     - [Build \& Production](#build--production)
   - [License](#license)
   - [Credits](#credits)
@@ -26,76 +26,54 @@ A modern and accessible landing page for **Espacio Amapola**, a maternal-infant 
 
 ## Description
 
-Espacio Amapola is a center offering guidance and care for the maternity journey:
+Espacio Amapola accompanies families through every stage of the maternity journey:
 
-- **Prenatal**: Techniques and tools to prepare for pregnancy and birth.
-- **Couples Sessions**: Joint workshops to support the growing family.
-- **Postpartum**: Advice on breastfeeding, weaning, and maternal recovery.
+- **Prenatal**: Preparatory techniques and support for expectant parents.  
+- **Couples Sessions**: Joint workshops fostering connection and confidence.  
+- **Postpartum**: Guidance on breastfeeding, newborn care, and maternal recovery.  
 
-The landing page is designed to convey warmth and trust, inviting visitors to explore services and get in touch quickly.
+This landing page is crafted to convey warmth and trust, guiding users seamlessly to relevant information and contact options.
 
 ---
 
 ## Key Features
 
-- **Dynamic Sections**: Home, Services, Testimonials, About, FAQ, Contact.
-- **Interactive Hero**: Parallax effect and cursor tracking with Framer Motion.
-- **Testimonials Slider**: Responsive carousel showcasing real feedback.
-- **Contact Form**: Client-side validation with simulated submission flow.
-- **WhatsApp Button**: One-click access to chat with the specialist.
-- **Sticky Navigation**: Smooth scrolling and style adjustments on scroll.
-- **Light/Dark Mode**: Toggleable theme support via CSS classes.
+- **Hero Section**: Parallax background and scroll-driven animations via Framer Motion.  
+- **Services Overview**: Summary cards linking to detailed `/services` pages.  
+- **Testimonials Slider**: Swipeable carousel with quotes, ratings, and avatars.  
+- **FAQ Accordion**: Collapsible Q&A powered by Radix UI.  
+- **Sticky Navigation**: Smooth scroll, active-link highlighting, and mobile menu.  
+- **Theme Toggle**: Light/dark mode with system-preference detection.  
+- **Scroll-to-Top**: Quick-return button appearing after scroll.  
+- **Contact Section**: Form with validation plus one-click WhatsApp button.  
+- **Footer**: Social links and quick navigation.
 
 ---
 
 ## Style Decisions
 
-- **Color Palette**
-
-  - Neutral backgrounds: `bg-neutral-50` / `bg-white`
-  - Primary accent (main orange): `#FFA500` (`bg-orange-500` / `text-orange-500`)
-  - Soft accents: pastel peach and apricot tones
-  - Text colors: `text-gray-900` (headings) / `text-gray-700` (body)
-
-- **Typography**
-
-  - Google Fonts:
-    - Headings: “Sour Gummy”
-    - Body text: “Inter”
-  - System font stack fallback: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif`
-
-- **Images**
-
-  - WebP format for hero and service graphics
-  - `next/image` for lazy-loading and responsive support
-
-- **Animations**
-
-  - Framer Motion for parallax, fade-ins, and hover states
-  - Tailwind CSS Animate for simple transitions
-
-- **Accessibility**
-
-  - High-contrast focus styles
-  - ARIA labels on interactive elements
-  - Full keyboard navigation support
+- **Design Tokens**: Defined as CSS variables in `globals.css` (`--background`, `--foreground`, `--primary`, `--secondary`, etc.).  
+- **Color Usage**: Utility-first via Tailwind classes (`bg-primary`, `text-foreground`, etc.).  
+- **Typography**:  
+  - **Display**: Sour Gummy (Next.js Google Font)  
+  - **Body**: Inter with system-font fallback  
+- **Layout & Spacing**: Centered container with `2rem` padding at breakpoints (see `tailwind.config.ts`).  
+- **Borders & Shadows**: Configured via CSS variables (`--radius`, `--shadow-sm`, etc.).  
+- **Images**: All media via Next.js `<Image>` for optimization and lazy-loading.
 
 ---
 
 ## Technologies & Tools
 
-- **Framework**: Next.js 13 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS (+ tailwindcss-animate)
-- **UI Components**:
-  - [shadcn/ui](https://ui.shadcn.com)
-  - [Radix UI](https://www.radix-ui.com)
-- **Forms**: React Hook Form
-- **Animations**: Framer Motion
-- **Charts**: Recharts (optional)
-- **Utilities**: clsx, tailwind-merge
-- **Lint & Format**: ESLint, Prettier
-- **Deployment Options**: Vercel, Docker, DigitalOcean
+- **Framework**: [Next.js](https://nextjs.org/) 13 (App Router in `src/app`)  
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (strict mode)  
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (+ `tailwindcss-animate`)  
+- **UI Primitives**: [Radix UI](https://www.radix-ui.com/), [`lucide-react`](https://github.com/lucide-icons/lucide) icons  
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)  
+- **Utilities**: `clsx`, `tailwind-merge`  
+- **Lint & Format**: ESLint, Prettier, `knip` (unused-code detection)  
+- **Images**: Next.js `<Image>` optimization  
+- **Deployment**: Vercel, Docker, DigitalOcean (optional)
 
 ---
 
@@ -103,21 +81,31 @@ The landing page is designed to convey warmth and trust, inviting visitors to ex
 
 ```
 .
-├── .env.example          # Example environment variables
-├── app/                  # Next.js App Router: layout & pages
-│   ├── layout.tsx
-│   ├── page.tsx
-│   └── sections.ts       # Definitions for homepage sections
-├── components/
-│   ├── landing/          # Section components (Hero, Services, etc.)
-│   └── ui/               # Design system components (Buttons, Inputs…)
-├── public/               # Static assets (images, icons, etc.)
-├── styles/               # Global CSS (globals.css)
+├── .env.example
+├── next.config.mjs
+├── tsconfig.json
 ├── tailwind.config.ts
 ├── postcss.config.mjs
-├── tsconfig.json
+├── eslint.config.mjs
 ├── package.json
-└── README.md             # ← You are here
+└── src/
+    ├── app/
+    │   ├── head.tsx
+    │   ├── layout.tsx
+    │   ├── page.tsx
+    │   ├── sections.ts
+    │   └── services/
+    │       └── page.tsx
+    ├── components/
+    │   ├── landing/          # Hero, Services, Testimonials, etc.
+    │   ├── ui/               # Button, Input, Accordion, etc.
+    │   └── providers/        # ThemeProvider, etc.
+    ├── hooks/                # Custom React hooks
+    ├── lib/                  # Utility functions, motion presets
+    ├── styles/
+    │   └── globals.css
+    └── fonts/
+        └── fonts.ts
 ```
 
 ---
@@ -126,64 +114,53 @@ The landing page is designed to convey warmth and trust, inviting visitors to ex
 
 ### Prerequisites
 
-- Node.js ≥ v18
-- npm ≥ 7 or Yarn
+- Node.js ≥ 18  
+- [pnpm](https://pnpm.io/) ≥ 7  
 
 ### Installation
 
 ```bash
 git clone https://github.com/your-username/espacio-amapola-landing.git
 cd espacio-amapola-landing
-npm install
-# or
-yarn install
+pnpm install
 ```
 
 ### Environment Variables
-
-Copy the example file and fill in:
 
 ```bash
 cp .env.example .env
 ```
 
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`: WhatsApp contact number
-- `NEXT_PUBLIC_INSTAGRAM_URL`: Instagram profile link
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: WhatsApp contact number  
+- `NEXT_PUBLIC_INSTAGRAM_URL`: Instagram profile URL  
 
-### Running in Development
+### Development
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open <http://localhost:3000> in your browser.
 
 ### Build & Production
 
 ```bash
-npm run build
-npm start
-# or
-yarn build
-yarn start
+pnpm build
+pnpm start
 ```
 
 ---
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
+MIT License. See [LICENSE](LICENSE).
 
 ---
 
 ## Credits
 
-- [Next.js](https://nextjs.org)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Radix UI](https://www.radix-ui.com)
-- [shadcn/ui](https://ui.shadcn.com)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Recharts](https://recharts.org)
-- Original design inspiration by [Espacio Amapola](https://espacio-amapola-v2-1.vercel.app/)
+- [Next.js](https://nextjs.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [Radix UI](https://www.radix-ui.com/)  
+- [`lucide-react`](https://github.com/lucide-icons/lucide)  
+- [Framer Motion](https://www.framer.com/motion/)  
