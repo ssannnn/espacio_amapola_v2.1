@@ -7,7 +7,7 @@ import Footer from "@/src/components/landing/footer";
 import { sections } from "./sections";
 import { SectionWrapper } from "@/src/components/landing/sectionWrapper";
 
-export default function Home() {
+export default function Home(): React.JSX.Element {
   return (
     <main className="relative min-h-screen overflow-hidden bg-neutral-50">
       <Navigation />

@@ -1,4 +1,4 @@
-export default function Head() {
+export default function Head(): React.JSX.Element {
   return (
     <>
       <link rel="preconnect" href="https://fonts.googleapis.com" />

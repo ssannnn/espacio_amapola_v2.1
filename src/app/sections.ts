@@ -5,12 +5,14 @@ import About from "@/src/components/landing/about_v2";
 import FAQ from "@/src/components/landing/faq";
 import Contact from "@/src/components/landing/contact";
 
-//Function to define homepage sections
+import type { ComponentType } from "react";
+
+// Function to define homepage sections
 
 export interface SectionItem {
   id: string;
   label: string;
-  Component: React.ComponentType;
+  Component: ComponentType<unknown>;
 }
 
 export const sections: SectionItem[] = [
