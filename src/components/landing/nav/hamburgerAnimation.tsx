@@ -8,7 +8,10 @@ interface HamburgerProps {
   toggle: () => void;
 }
 
-export default function Hamburger({ isOpen, toggle }: HamburgerProps): ReactElement {
+export default function Hamburger({
+  isOpen,
+  toggle,
+}: HamburgerProps): ReactElement {
   return (
     <motion.button
       className="relative z-50 block md:hidden"

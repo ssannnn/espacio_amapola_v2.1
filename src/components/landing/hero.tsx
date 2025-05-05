@@ -11,16 +11,28 @@ export default function Hero(): React.JSX.Element {
     x: number;
     y: number;
   }
-  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({
+    x: 0,
+    y: 0,
+  });
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
+  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
+    useScroll({
+      target: containerRef,
+      offset: ["start start", "end start"],
+    });
 
-  const y: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const opacity: MotionValue<number> = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, 300],
+  );
+  const opacity: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.8],
+    [1, 0],
+  );
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent): void => {

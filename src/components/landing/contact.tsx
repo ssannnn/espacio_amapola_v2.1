@@ -1,9 +1,6 @@
 "use client";
 
-import type {
-  ChangeEvent,
-  FormEvent,
-} from "react";
+import type { ChangeEvent, FormEvent } from "react";
 import { useRef, useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
@@ -24,22 +21,30 @@ interface FormData {
 
 export default function Contact(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const isInView: boolean = useInView(containerRef, { once: false, amount: 0.2 });
-  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
+  const isInView: boolean = useInView(containerRef, {
+    once: false,
+    amount: 0.2,
   });
+  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
+    useScroll({
+      target: containerRef,
+      offset: ["start end", "end start"],
+    });
 
-  const y: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [100, -100],
+  );
   const opacity: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
+    [0, 1, 1, 0],
   );
   const scale: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0.8, 1, 1, 0.8]
+    [0.8, 1, 1, 0.8],
   );
 
   const [formData, setFormData] = useState<FormData>({
@@ -53,7 +58,7 @@ export default function Contact(): React.JSX.Element {
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));

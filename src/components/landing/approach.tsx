@@ -6,22 +6,32 @@ import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
 export default function Approach(): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const isInView: boolean = useInView(containerRef, { once: false, amount: 0.2 });
-  const { scrollYProgress }: { scrollYProgress: import("framer-motion").MotionValue<number> } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
+  const isInView: boolean = useInView(containerRef, {
+    once: false,
+    amount: 0.2,
   });
+  const {
+    scrollYProgress,
+  }: { scrollYProgress: import("framer-motion").MotionValue<number> } =
+    useScroll({
+      target: containerRef,
+      offset: ["start end", "end start"],
+    });
 
-  const y: import("framer-motion").MotionValue<number> = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const y: import("framer-motion").MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [100, -100],
+  );
   const opacity: import("framer-motion").MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
+    [0, 1, 1, 0],
   );
   const scale: import("framer-motion").MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0.8, 1, 1, 0.8]
+    [0.8, 1, 1, 0.8],
   );
 
   interface Step {

@@ -88,7 +88,7 @@ export default function Testimonials(): React.JSX.Element {
   const [currentX, setCurrentX] = useState<number>(0);
 
   const handleDragStart = (
-    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
   ): void => {
     setDragging(true);
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
@@ -97,7 +97,7 @@ export default function Testimonials(): React.JSX.Element {
   };
 
   const handleDragMove = (
-    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
   ): void => {
     if (!dragging) return;
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
@@ -112,12 +112,12 @@ export default function Testimonials(): React.JSX.Element {
       if (diff > 0) {
         // Swiped left
         setActiveIndex((prev) =>
-          prev === testimonials.length - 1 ? 0 : prev + 1
+          prev === testimonials.length - 1 ? 0 : prev + 1,
         );
       } else {
         // Swiped right
         setActiveIndex((prev) =>
-          prev === 0 ? testimonials.length - 1 : prev - 1
+          prev === 0 ? testimonials.length - 1 : prev - 1,
         );
       }
     }
@@ -211,7 +211,7 @@ export default function Testimonials(): React.JSX.Element {
                       fill="currentColor"
                       viewBox="0 0 32 32"
                     >
-                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064	3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472	-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4z"/>
+                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064	3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472	-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4z" />
                     </svg>
                   </div>
                   <p className="text-base italic leading-relaxed text-neutral-700 sm:text-lg">
@@ -220,32 +220,36 @@ export default function Testimonials(): React.JSX.Element {
 
                   {/* Stars */}
                   <div className="mt-6 flex justify-end">
-                  {Array<number>(5).fill(0).map((_, i): React.JSX.Element => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill={
-                          i < testimonials[activeIndex].rating
-                            ? "currentColor"
-                            : "none"
-                        }
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`ml-1 text-orange-400 ${
-                          i < testimonials[activeIndex].rating
-                            ? "md:animate-pulse"
-                            : ""
-                        }`}
-                        style={{ animationDelay: `${i * 0.2}s` }}
-                      >
-                        <polygon points="12 2 15.09 8.26	22 9.27 17 14.14	18.18 21.02 12 17.77	5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                      </svg>
-                    ))}
+                    {Array<number>(5)
+                      .fill(0)
+                      .map(
+                        (_, i): React.JSX.Element => (
+                          <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill={
+                              i < testimonials[activeIndex].rating
+                                ? "currentColor"
+                                : "none"
+                            }
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={`ml-1 text-orange-400 ${
+                              i < testimonials[activeIndex].rating
+                                ? "md:animate-pulse"
+                                : ""
+                            }`}
+                            style={{ animationDelay: `${i * 0.2}s` }}
+                          >
+                            <polygon points="12 2 15.09 8.26	22 9.27 17 14.14	18.18 21.02 12 17.77	5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
+                        ),
+                      )}
                   </div>
                 </div>
               </div>
@@ -257,7 +261,7 @@ export default function Testimonials(): React.JSX.Element {
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
                 onClick={() =>
                   setActiveIndex((prev) =>
-                    prev === 0 ? testimonials.length - 1 : prev - 1
+                    prev === 0 ? testimonials.length - 1 : prev - 1,
                   )
                 }
               >
@@ -273,7 +277,7 @@ export default function Testimonials(): React.JSX.Element {
                   strokeLinejoin="round"
                   className="h-5 w-5 sm:h-6 sm:w-6"
                 >
-                  <path d="m15 18-6-6 6-6"/>
+                  <path d="m15 18-6-6 6-6" />
                 </svg>
               </button>
 
@@ -285,7 +289,7 @@ export default function Testimonials(): React.JSX.Element {
                 className="flex h-10 w-10 items-center justify-center rounded-full	bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
                 onClick={() =>
                   setActiveIndex((prev) =>
-                    prev === testimonials.length - 1 ? 0 : prev + 1
+                    prev === testimonials.length - 1 ? 0 : prev + 1,
                   )
                 }
               >
@@ -301,7 +305,7 @@ export default function Testimonials(): React.JSX.Element {
                   strokeLinejoin="round"
                   className="h-5 w-5 sm:h-6 sm:w-6"
                 >
-                  <path d="m9 18 6-6-6-6"/>
+                  <path d="m9 18 6-6-6-6" />
                 </svg>
               </button>
             </div>
@@ -321,12 +325,13 @@ export default function Testimonials(): React.JSX.Element {
               strokeLinejoin="round"
               className="mr-2 h-4 w-4"
             >
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-              <circle cx="12" cy="12" r="3"/>
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
             Desliza para ver más testimonios
           </div>
         </div>
       </div>
     </section>
-  )};
+  );
+}

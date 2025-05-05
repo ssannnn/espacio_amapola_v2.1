@@ -12,7 +12,9 @@ export interface MenuItem {
   href: string;
 }
 
-export const menuItems: MenuItem[] = sections.map(({ id, label }: SectionItem): MenuItem => {
-  const href = id === "propuestas" ? "/services" : `/#${id}`;
-  return { id, label, href };
-});
+export const menuItems: MenuItem[] = sections.map(
+  ({ id, label }: SectionItem): MenuItem => {
+    const href = id === "propuestas" ? "/services" : `/#${id}`;
+    return { id, label, href };
+  },
+);

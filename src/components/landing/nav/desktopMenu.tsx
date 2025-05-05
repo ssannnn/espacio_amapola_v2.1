@@ -13,7 +13,9 @@ interface DesktopMenuProps {
   onSelect?: () => void;
 }
 
-export default function DesktopMenu({ onSelect }: DesktopMenuProps): ReactElement {
+export default function DesktopMenu({
+  onSelect,
+}: DesktopMenuProps): ReactElement {
   const handleClick = (): void => onSelect?.();
   const pathname: string = usePathname();
   const isActive = (href: string): boolean => pathname === href;

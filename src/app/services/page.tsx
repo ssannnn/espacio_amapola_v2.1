@@ -29,7 +29,10 @@ export default function ServicesPage(): ReactElement {
 
   const [activeTab, setActiveTab] = useState<string>("prenatal");
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const isHeaderInView: boolean = useInView(headerRef, { once: false, amount: 0.2 });
+  const isHeaderInView: boolean = useInView(headerRef, {
+    once: false,
+    amount: 0.2,
+  });
 
   // Service data
   const services = [
