@@ -7,7 +7,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
