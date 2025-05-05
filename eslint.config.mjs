@@ -1,32 +1,31 @@
 // @ts-check
 
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import prettier from 'eslint-config-prettier';
-
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+import prettier from "eslint-config-prettier";
 
 export default tseslint.config(
-    eslint.configs.recommended,
-    tseslint.configs.recommendedTypeChecked,
+  eslint.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ["src/**/*.{ts,tsx}"],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.json'],
+        project: ["./tsconfig.json"],
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
-    tseslint.configs.stylisticTypeChecked,
+  tseslint.configs.stylisticTypeChecked,
   {
-    name: 'custom-rules',
+    name: "custom-rules",
     rules: {
-      'no-console': 'warn',
-      '@typescript-eslint/explicit-function-return-type': 'warn',
+      "no-console": "warn",
+      "@typescript-eslint/explicit-function-return-type": "warn",
     },
   },
   {
-    name: 'prettier',
+    name: "prettier",
     ...prettier,
-  }
+  },
 );
