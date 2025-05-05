@@ -1,11 +1,20 @@
 "use client";
 
 import type React from "react";
-
+import type { MouseEvent, TouchEvent } from "react";
 import { useState, useRef } from "react";
 import Image from "next/image";
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+  rating: number;
+  category: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     quote:
       "No duden en regalarse este espacio, es un mimo y una lindísima forma de transitar el embarazo. Para mí fue de quietud y encuentro. Encuentro con mi bebé, con mi cuerpo cambiante, conmigo misma. Rochi habilita este espacio de manera dulce y suave, compartiendo su conocimiento sin imponer. Su acompañamiento me dio mucha tranquilidad y los movimientos que hicimos ayudaron a calmar los dolores del cuerpo propios de esta etapa.",
@@ -71,27 +80,31 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
-  const containerRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [dragging, setDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [currentX, setCurrentX] = useState(0);
+export default function Testimonials(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [dragging, setDragging] = useState<boolean>(false);
+  const [startX, setStartX] = useState<number>(0);
+  const [currentX, setCurrentX] = useState<number>(0);
 
-  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleDragStart = (
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
+  ): void => {
     setDragging(true);
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     setStartX(clientX);
     setCurrentX(clientX);
   };
 
-  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleDragMove = (
+    e: MouseEvent<HTMLDivElement> | TouchEvent<HTMLDivElement>,
+  ): void => {
     if (!dragging) return;
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     setCurrentX(clientX);
   };
 
-  const handleDragEnd = () => {
+  const handleDragEnd = (): void => {
     if (!dragging) return;
     setDragging(false);
     const diff = startX - currentX;
@@ -157,15 +170,15 @@ export default function Testimonials() {
           onTouchMove={handleDragMove}
           onTouchEnd={handleDragEnd}
         >
-          {/* Testimonial card container - fixed height on mobile, auto on desktop */}
+          {/* Testimonial card container */}
           <div className="relative h-auto overflow-hidden">
-            {/* Current testimonial - fully visible with subtle animations on desktop */}
+            {/* Current testimonial */}
             <div className="mx-auto w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-xl md:transition-all md:duration-500 md:hover:shadow-2xl">
               <div className="flex flex-col">
-                {/* Top section with image and category */}
+                {/* Top section */}
                 <div className="flex items-center justify-between bg-gradient-to-r from-orange-100 to-orange-50 p-4 md:transition-all md:duration-500 md:hover:from-orange-200 md:hover:to-orange-100">
                   <div className="flex items-center gap-4">
-                    <div className="relative h-16 w-16 md:h-24 md:w-24 overflow-hidden rounded-full border-2 border-white shadow-md sm:h-20 sm:w-20 md:transition-all md:duration-300 md:hover:scale-105">
+                    <div className="relative h-16 w-16 md:h-24 md:w-24 overflow-hidden rounded-full border-2	border-white shadow-md sm:h-20 sm:w-20 md:transition-all md:duration-300 md:hover:scale-105">
                       <Image
                         src={
                           testimonials[activeIndex].avatar || "/placeholder.svg"
@@ -190,7 +203,7 @@ export default function Testimonials() {
                   </span>
                 </div>
 
-                {/* Quote content */}
+                {/* Quote */}
                 <div className="flex flex-col p-6">
                   <div className="mb-4">
                     <svg
@@ -198,43 +211,51 @@ export default function Testimonials() {
                       fill="currentColor"
                       viewBox="0 0 32 32"
                     >
-                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                      <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064	3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472	-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4z" />
                     </svg>
                   </div>
                   <p className="text-base italic leading-relaxed text-neutral-700 sm:text-lg">
                     {testimonials[activeIndex].quote}
                   </p>
 
-                  {/* Rating stars with subtle animation on desktop */}
+                  {/* Stars */}
                   <div className="mt-6 flex justify-end">
-                    {[...Array(5)].map((_, i) => (
-                      <svg
-                        key={i}
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill={
-                          i < testimonials[activeIndex].rating
-                            ? "currentColor"
-                            : "none"
-                        }
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`ml-1 text-orange-400 ${i < testimonials[activeIndex].rating ? "md:animate-pulse" : ""}`}
-                        style={{ animationDelay: `${i * 0.2}s` }}
-                      >
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                      </svg>
-                    ))}
+                    {Array<number>(5)
+                      .fill(0)
+                      .map(
+                        (_, i): React.JSX.Element => (
+                          <svg
+                            key={i}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill={
+                              i < testimonials[activeIndex].rating
+                                ? "currentColor"
+                                : "none"
+                            }
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className={`ml-1 text-orange-400 ${
+                              i < testimonials[activeIndex].rating
+                                ? "md:animate-pulse"
+                                : ""
+                            }`}
+                            style={{ animationDelay: `${i * 0.2}s` }}
+                          >
+                            <polygon points="12 2 15.09 8.26	22 9.27 17 14.14	18.18 21.02 12 17.77	5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                          </svg>
+                        ),
+                      )}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Navigation controls with enhanced hover effects on desktop */}
+            {/* Controls */}
             <div className="mt-6 flex items-center justify-between px-4">
               <button
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
@@ -260,13 +281,12 @@ export default function Testimonials() {
                 </svg>
               </button>
 
-              {/* Pagination indicator */}
               <div className="text-sm font-medium text-neutral-600">
                 {activeIndex + 1} / {testimonials.length}
               </div>
 
               <button
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
+                className="flex h-10 w-10 items-center justify-center rounded-full	bg-white text-orange-500 shadow-md hover:bg-orange-50 sm:h-12 sm:w-12 md:transition-all md:duration-300 md:hover:scale-110"
                 onClick={() =>
                   setActiveIndex((prev) =>
                     prev === testimonials.length - 1 ? 0 : prev + 1,
@@ -291,7 +311,7 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Swipe instruction - only visible on mobile */}
+          {/* Mobile swipe hint */}
           <div className="mt-6 flex items-center justify-center text-sm text-neutral-500 sm:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -305,8 +325,8 @@ export default function Testimonials() {
               strokeLinejoin="round"
               className="mr-2 h-4 w-4"
             >
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
             </svg>
             Desliza para ver más testimonios
           </div>

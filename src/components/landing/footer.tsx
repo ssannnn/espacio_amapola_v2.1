@@ -1,24 +1,22 @@
 "use client";
 
 import { useState } from "react";
-
-import type React from "react";
+import type { FormEvent } from "react";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramUrl: string = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramHref: string = instagramUrl;
 
-const instagramHref = instagramUrl;
+export default function Footer(): React.JSX.Element {
+  const [email, setEmail] = useState<string>("");
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -134,8 +132,7 @@ export default function Footer() {
               Redes Sociales
             </h4>
             <p className="mb-6 font-sans">
-              Para estar al día con las ultimas novedades, podes seguirme en
-              Instagram.
+              Enterate de todo lo nuevo siguiéndome en Instagram.
             </p>
             <div className="flex space-x-4">
               {/* Instagram link */}
@@ -184,7 +181,8 @@ export default function Footer() {
               Newsletter
             </h4>
             <p className="mb-4 font-sans">
-              Suscríbete para recibir las últimas actualizaciones y recursos.
+              Te invito a suscribirte para recibir las últimas actualizaciones y
+              novedades de nuevas propuestas.
             </p>
             {isSubscribed ? (
               <motion.div

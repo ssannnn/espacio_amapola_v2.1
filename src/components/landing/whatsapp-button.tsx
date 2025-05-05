@@ -3,17 +3,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
-
+const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
-export default function WhatsAppButton() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isTooltipVisible, setIsTooltipVisible] = useState(false);
+export default function WhatsAppButton(): React.JSX.Element {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [isTooltipVisible, setIsTooltipVisible] = useState<boolean>(false);
 
   // Show button after scrolling down a bit
   useEffect(() => {
-    const toggleVisibility = () => {
+    const toggleVisibility = (): void => {
       if (window.pageYOffset > 300) {
         setIsVisible(true);
       } else {
@@ -22,7 +21,9 @@ export default function WhatsAppButton() {
     };
 
     window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    return (): void => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
   }, []);
 
   return (

@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,18 +18,21 @@ import Footer from "@/src/components/landing/footer";
 import WhatsAppButton from "@/src/components/landing/whatsapp-button";
 import ScrollToTop from "@/src/components/landing/scroll-to-top";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
+const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
-export default function ServicesPage() {
+export default function ServicesPage(): ReactElement {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [activeTab, setActiveTab] = useState("prenatal");
-  const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: false, amount: 0.2 });
+  const [activeTab, setActiveTab] = useState<string>("prenatal");
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const isHeaderInView: boolean = useInView(headerRef, {
+    once: false,
+    amount: 0.2,
+  });
 
   // Service data
   const services = [

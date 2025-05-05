@@ -1,10 +1,11 @@
 "use client";
 
+import type { ReactElement } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Logo() {
+export default function Logo(): ReactElement {
   return (
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <Link href="/" scroll={true} className="flex items-center gap-2">

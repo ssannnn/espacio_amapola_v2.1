@@ -4,10 +4,16 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/src/components/ui/button";
 
-export default function About() {
-  const containerRef = useRef(null);
+interface Certification {
+  institution: string;
+  certification: string;
+  logoUrl: string;
+}
 
-  const certifications = [
+export default function About(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const certifications: Certification[] = [
     {
       institution: "FUNDALAM",
       certification: "Tecnicatura en Puericultura",
@@ -40,7 +46,7 @@ export default function About() {
     },
     {
       institution: "Método Frida Kaplan",
-      certification: "Docente en el Método Frida Kaplan",
+      certification: "Docente del Método Frida Kaplan",
       logoUrl: "/frida-kaplan.webp",
     },
     {
@@ -50,7 +56,7 @@ export default function About() {
     },
     {
       institution: "Parto positivo",
-      certification: "Prof. de HIPNOPARTO B",
+      certification: "Prof. de HIPNOPARTO",
       logoUrl: "/parto-positivo.webp",
     },
   ];
@@ -109,12 +115,6 @@ export default function About() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                 </div>
-
-                {/* Static decorative elements with subtle float animation on desktop */}
-                <div className="absolute left-[15%] top-[20%] h-4 w-4 rounded-full bg-orange-200 opacity-70 md:animate-[bounce_6s_ease-in-out_infinite]" />
-                <div className="absolute right-[20%] top-[15%] h-6 w-6 rounded-full bg-orange-300 opacity-60 md:animate-[bounce_7s_ease-in-out_infinite]" />
-                <div className="absolute bottom-[15%] left-[25%] h-5 w-5 rounded-full bg-orange-400 opacity-60 md:animate-[bounce_5s_ease-in-out_infinite]" />
-                <div className="absolute bottom-[20%] right-[15%] h-3 w-3 rounded-full bg-orange-500 opacity-70 md:animate-[bounce_8s_ease-in-out_infinite]" />
               </div>
             </div>
 

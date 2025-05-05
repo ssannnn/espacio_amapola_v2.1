@@ -1,8 +1,14 @@
 "use client";
 
-import { ReactNode } from "react";
+import type React from "react";
+import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "@/src/lib/motion";
+
+interface SectionWrapperProps {
+  id: string;
+  children: ReactNode;
+}
 
 /**
  * Wraps a section so that:
@@ -12,10 +18,7 @@ import { fadeUp } from "@/src/lib/motion";
 export function SectionWrapper({
   id,
   children,
-}: {
-  id: string;
-  children: ReactNode;
-}) {
+}: SectionWrapperProps): React.JSX.Element {
   return (
     <>
       {/* Desktop: animated entrance */}

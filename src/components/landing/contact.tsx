@@ -1,53 +1,70 @@
 "use client";
 
-import type React from "react";
-
+import type { ChangeEvent, FormEvent } from "react";
 import { useRef, useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Textarea } from "@/src/components/ui/textarea";
 import { Label } from "@/src/components/ui/label";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import type { MotionValue } from "framer-motion";
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
-
+const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
 
-export default function Contact() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(
+export default function Contact(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const isInView: boolean = useInView(containerRef, {
+    once: false,
+    amount: 0.2,
+  });
+  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } =
+    useScroll({
+      target: containerRef,
+      offset: ["start end", "end start"],
+    });
+
+  const y: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [100, -100],
+  );
+  const opacity: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0],
+  );
+  const scale: MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
     [0.8, 1, 1, 0.8],
   );
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
 
