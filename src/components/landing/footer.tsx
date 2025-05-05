@@ -1,24 +1,22 @@
 "use client";
 
 import { useState } from "react";
-
-import type React from "react";
+import type { FormEvent } from "react";
 import Link from "next/link";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramUrl: string = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
+const instagramHref: string = instagramUrl;
 
-const instagramHref = instagramUrl;
+export default function Footer(): React.JSX.Element {
+  const [email, setEmail] = useState<string>("");
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsSubmitting(true);
 

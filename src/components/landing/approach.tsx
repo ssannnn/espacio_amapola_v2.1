@@ -4,23 +4,32 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 
-export default function Approach() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
-  const { scrollYProgress } = useScroll({
+export default function Approach(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const isInView: boolean = useInView(containerRef, { once: false, amount: 0.2 });
+  const { scrollYProgress }: { scrollYProgress: import("framer-motion").MotionValue<number> } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale = useTransform(
+  const y: import("framer-motion").MotionValue<number> = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity: import("framer-motion").MotionValue<number> = useTransform(
     scrollYProgress,
     [0, 0.2, 0.8, 1],
-    [0.8, 1, 1, 0.8],
+    [0, 1, 1, 0]
+  );
+  const scale: import("framer-motion").MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8]
   );
 
-  const steps = [
+  interface Step {
+    number: number;
+    title: string;
+    description: string;
+  }
+  const steps: Step[] = [
     {
       number: 1,
       title: "Personalized Care Plans",

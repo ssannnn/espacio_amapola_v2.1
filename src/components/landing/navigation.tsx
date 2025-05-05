@@ -10,9 +10,9 @@ import DesktopMenu from "./nav/desktopMenu";
 import Hamburger from "./nav/hamburgerAnimation";
 import MobileMenu from "./nav/mobileMenu";
 
-export default function Navigation() {
-  const scrolled = useScrollPosition(50);
-  const [isOpen, setIsOpen] = useState(false);
+export default function Navigation(): React.JSX.Element {
+  const scrolled: boolean = useScrollPosition(50);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <motion.nav

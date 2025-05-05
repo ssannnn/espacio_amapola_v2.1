@@ -4,10 +4,16 @@ import { useRef } from "react";
 import Image from "next/image";
 import { Button } from "@/src/components/ui/button";
 
-export default function About() {
-  const containerRef = useRef(null);
+interface Certification {
+  institution: string;
+  certification: string;
+  logoUrl: string;
+}
 
-  const certifications = [
+export default function About(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const certifications: Certification[] = [
     {
       institution: "FUNDALAM",
       certification: "Tecnicatura en Puericultura",

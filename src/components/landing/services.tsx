@@ -1,10 +1,17 @@
 "use client";
 
 import { useRef } from "react";
+import type React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const services = [
+interface ServiceItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
+const services: ServiceItem[] = [
   {
     title: "Prenatal",
     description:
@@ -25,8 +32,8 @@ const services = [
   },
 ];
 
-export default function Services() {
-  const containerRef = useRef(null);
+export default function Services(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <section

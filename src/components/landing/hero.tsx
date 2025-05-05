@@ -1,23 +1,29 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import type { MotionValue } from "framer-motion";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+export default function Hero(): React.JSX.Element {
+  interface MousePosition {
+    x: number;
+    y: number;
+  }
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+
+  const { scrollYProgress }: { scrollYProgress: MotionValue<number> } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const y: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [0, 300]);
+  const opacity: MotionValue<number> = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent): void => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({
@@ -27,11 +33,16 @@ export default function Hero() {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return (): void => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Borderless images with varied sizes and asymmetrical distribution
-  const images = [
+  interface HeroImage {
+    src: string;
+    alt: string;
+    color: string;
+    shape: string;
+  }
+  const images: HeroImage[] = [
     {
       src: "/hero_11.webp",
       alt: "Hijo con madre embarazada",

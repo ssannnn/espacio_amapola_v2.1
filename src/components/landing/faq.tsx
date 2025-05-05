@@ -2,7 +2,12 @@
 
 import { useRef, useState } from "react";
 
-const faqs = [
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
   {
     question: "¿Cuándo puedo empezar?",
     answer:
@@ -24,11 +29,11 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
-  const containerRef = useRef(null);
+export default function FAQ(): React.JSX.Element {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [openItem, setOpenItem] = useState<string | null>(null);
 
-  const toggleItem = (id: string) => {
+  const toggleItem = (id: string): void => {
     setOpenItem(openItem === id ? null : id);
   };
 
