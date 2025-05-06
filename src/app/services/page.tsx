@@ -33,6 +33,14 @@ export default function ServicesPage(): ReactElement {
     amount: 0.2,
   });
 
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash === '#contact') {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
   interface FormData {
     name: string;
     email: string;
