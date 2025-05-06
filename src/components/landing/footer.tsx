@@ -12,7 +12,6 @@ const instagramUrl: string = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
 const instagramHref: string = instagramUrl;
 const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "";
 
-
 export default function Footer(): React.JSX.Element {
   const [email, setEmail] = useState<string>("");
   const [isSubscribed, setIsSubscribed] = useState<boolean>(false);

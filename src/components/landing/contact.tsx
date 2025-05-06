@@ -11,7 +11,8 @@ import type { MotionValue } from "framer-motion";
 
 const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
-const formspreeEndpoint: string = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
+const formspreeEndpoint: string =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
 
 interface FormData {
   name: string;
@@ -32,9 +33,21 @@ export default function Contact(): React.JSX.Element {
       offset: ["start end", "end start"],
     });
 
-  const y: MotionValue<number> = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const opacity: MotionValue<number> = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const scale: MotionValue<number> = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const y: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [100, -100],
+  );
+  const opacity: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0, 1, 1, 0],
+  );
+  const scale: MotionValue<number> = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.8, 1, 1, 0.8],
+  );
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -68,12 +81,14 @@ export default function Contact(): React.JSX.Element {
       });
 
       if (!res.ok) {
-          interface FormspreeErrorResponse {
+        interface FormspreeErrorResponse {
           errors?: { message: string }[];
         }
-  
+
         const data = (await res.json()) as FormspreeErrorResponse;
-        throw new Error(data.errors?.[0]?.message ?? "Error al enviar el formulario");
+        throw new Error(
+          data.errors?.[0]?.message ?? "Error al enviar el formulario",
+        );
       }
 
       setIsSubmitted(true);
@@ -84,7 +99,6 @@ export default function Contact(): React.JSX.Element {
       setIsSubmitting(false);
     }
   };
-
 
   return (
     <section
@@ -294,7 +308,12 @@ export default function Contact(): React.JSX.Element {
                   </motion.button>
                 </motion.div>
               ) : (
-                <form onSubmit={(e) => { void handleSubmit(e); }} className="space-y-4">
+                <form
+                  onSubmit={(e) => {
+                    void handleSubmit(e);
+                  }}
+                  className="space-y-4"
+                >
                   <div className="space-y-2">
                     <Label
                       htmlFor="name"

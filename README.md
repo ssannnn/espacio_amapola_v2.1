@@ -28,9 +28,9 @@ A modern, responsive, and accessible landing page for **Espacio Amapola**, speci
 
 Espacio Amapola accompanies families through every stage of the maternity journey:
 
-- **Prenatal**: Preparatory techniques and support for expectant parents.  
-- **Couples Sessions**: Joint workshops fostering connection and confidence.  
-- **Postpartum**: Guidance on breastfeeding, newborn care, and maternal recovery.  
+- **Prenatal**: Preparatory techniques and support for expectant parents.
+- **Couples Sessions**: Joint workshops fostering connection and confidence.
+- **Postpartum**: Guidance on breastfeeding, newborn care, and maternal recovery.
 
 This landing page is crafted to convey warmth and trust, guiding users seamlessly to relevant information and contact options.
 
@@ -38,41 +38,41 @@ This landing page is crafted to convey warmth and trust, guiding users seamlessl
 
 ## Key Features
 
-- **Hero Section**: Parallax background and scroll-driven animations via Framer Motion.  
-- **Services Overview**: Summary cards linking to detailed `/services` pages.  
-- **Testimonials Slider**: Swipeable carousel with quotes, ratings, and avatars.  
-- **FAQ Accordion**: Collapsible Q&A powered by Radix UI.  
-- **Sticky Navigation**: Smooth scroll, active-link highlighting, and mobile menu.  
-- **Theme Toggle**: Light/dark mode with system-preference detection.  
-- **Scroll-to-Top**: Quick-return button appearing after scroll.  
-- **Contact Section**: Form with validation plus one-click WhatsApp button.  
+- **Hero Section**: Parallax background and scroll-driven animations via Framer Motion.
+- **Services Overview**: Summary cards linking to detailed `/services` pages.
+- **Testimonials Slider**: Swipeable carousel with quotes, ratings, and avatars.
+- **FAQ Accordion**: Collapsible Q&A powered by Radix UI.
+- **Sticky Navigation**: Smooth scroll, active-link highlighting, and mobile menu.
+- **Theme Toggle**: Light/dark mode with system-preference detection.
+- **Scroll-to-Top**: Quick-return button appearing after scroll.
+- **Contact Section**: Form with validation plus one-click WhatsApp button.
 - **Footer**: Social links and quick navigation.
 
 ---
 
 ## Style Decisions
 
-- **Design Tokens**: Defined as CSS variables in `globals.css` (`--background`, `--foreground`, `--primary`, `--secondary`, etc.).  
-- **Color Usage**: Utility-first via Tailwind classes (`bg-primary`, `text-foreground`, etc.).  
-- **Typography**:  
-  - **Display**: Sour Gummy (Next.js Google Font)  
-  - **Body**: Inter with system-font fallback  
-- **Layout & Spacing**: Centered container with `2rem` padding at breakpoints (see `tailwind.config.ts`).  
-- **Borders & Shadows**: Configured via CSS variables (`--radius`, `--shadow-sm`, etc.).  
+- **Design Tokens**: Defined as CSS variables in `globals.css` (`--background`, `--foreground`, `--primary`, `--secondary`, etc.).
+- **Color Usage**: Utility-first via Tailwind classes (`bg-primary`, `text-foreground`, etc.).
+- **Typography**:
+  - **Display**: Sour Gummy (Next.js Google Font)
+  - **Body**: Inter with system-font fallback
+- **Layout & Spacing**: Centered container with `2rem` padding at breakpoints (see `tailwind.config.ts`).
+- **Borders & Shadows**: Configured via CSS variables (`--radius`, `--shadow-sm`, etc.).
 - **Images**: All media via Next.js `<Image>` for optimization and lazy-loading.
 
 ---
 
 ## Technologies & Tools
 
-- **Framework**: [Next.js](https://nextjs.org/) 13 (App Router in `src/app`)  
-- **Language**: [TypeScript](https://www.typescriptlang.org/) (strict mode)  
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (+ `tailwindcss-animate`)  
-- **UI Primitives**: [Radix UI](https://www.radix-ui.com/), [`lucide-react`](https://github.com/lucide-icons/lucide) icons  
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)  
-- **Utilities**: `clsx`, `tailwind-merge`  
-- **Lint & Format**: ESLint, Prettier, `knip` (unused-code detection)  
-- **Images**: Next.js `<Image>` optimization  
+- **Framework**: [Next.js](https://nextjs.org/) 13 (App Router in `src/app`)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (strict mode)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (+ `tailwindcss-animate`)
+- **UI Primitives**: [Radix UI](https://www.radix-ui.com/), [`lucide-react`](https://github.com/lucide-icons/lucide) icons
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Utilities**: `clsx`, `tailwind-merge`
+- **Lint & Format**: ESLint, Prettier, `knip` (unused-code detection)
+- **Images**: Next.js `<Image>` optimization
 - **Deployment**: Vercel, Docker, DigitalOcean (optional)
 
 ---
@@ -114,8 +114,8 @@ This landing page is crafted to convey warmth and trust, guiding users seamlessl
 
 ### Prerequisites
 
-- Node.js ≥ 18  
-- [pnpm](https://pnpm.io/) ≥ 7  
+- Node.js ≥ 18
+- [pnpm](https://pnpm.io/) ≥ 7
 
 ### Installation
 
@@ -131,8 +131,8 @@ pnpm install
 cp .env.example .env
 ```
 
-- `NEXT_PUBLIC_WHATSAPP_NUMBER`: WhatsApp contact number  
-- `NEXT_PUBLIC_INSTAGRAM_URL`: Instagram profile URL  
+- `NEXT_PUBLIC_WHATSAPP_NUMBER`: WhatsApp contact number
+- `NEXT_PUBLIC_INSTAGRAM_URL`: Instagram profile URL
 
 ### Development
 
@@ -159,8 +159,8 @@ MIT License. See [LICENSE](LICENSE).
 
 ## Credits
 
-- [Next.js](https://nextjs.org/)  
-- [Tailwind CSS](https://tailwindcss.com/)  
-- [Radix UI](https://www.radix-ui.com/)  
-- [`lucide-react`](https://github.com/lucide-icons/lucide)  
-- [Framer Motion](https://www.framer.com/motion/)  
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/)
+- [`lucide-react`](https://github.com/lucide-icons/lucide)
+- [Framer Motion](https://www.framer.com/motion/)
