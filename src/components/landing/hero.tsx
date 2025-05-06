@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import type { MotionValue } from "framer-motion";
+import type { MotionValue } from "motion";
 import { Button } from "@/src/components/ui/button";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
+import Link from "next/link";
 
 export default function Hero(): React.JSX.Element {
   interface MousePosition {
@@ -168,18 +169,20 @@ export default function Hero(): React.JSX.Element {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            <Button
-              className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
-              asChild
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
             >
-              <motion.a
-                href="#contact"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <Button
+                asChild
+                className="w-fit rounded-full bg-orange-500 px-6 py-3 text-white hover:bg-orange-600"
               >
-                Reservar un lugar
-              </motion.a>
-            </Button>
+                <Link href="/services#contact" scroll={false}>
+                  Reservar un lugar
+                </Link>
+              </Button>
+            </motion.div>
             <Button
               variant="outline"
               className="w-fit rounded-full border-2 border-orange-500 px-6 py-3 text-orange-500 hover:bg-orange-50"
