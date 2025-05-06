@@ -11,6 +11,8 @@ import type { MotionValue } from "framer-motion";
 
 const whatsappNumber: string = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 const whatsappHref = `https://wa.me/${whatsappNumber}`;
+const formspreeEndpoint: string =
+  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
 
 interface FormData {
   name: string;
@@ -64,16 +66,38 @@ export default function Contact(): React.JSX.Element {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch(formspreeEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        interface FormspreeErrorResponse {
+          errors?: { message: string }[];
+        }
+
+        const data = (await res.json()) as FormspreeErrorResponse;
+        throw new Error(
+          data.errors?.[0]?.message ?? "Error al enviar el formulario",
+        );
+      }
+
       setIsSubmitted(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
-    }, 1500);
+    } catch (error) {
+      alert((error as Error).message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -284,7 +308,12 @@ export default function Contact(): React.JSX.Element {
                   </motion.button>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  onSubmit={(e) => {
+                    void handleSubmit(e);
+                  }}
+                  className="space-y-4"
+                >
                   <div className="space-y-2">
                     <Label
                       htmlFor="name"

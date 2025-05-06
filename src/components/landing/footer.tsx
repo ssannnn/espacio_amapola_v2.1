@@ -10,6 +10,7 @@ import Image from "next/image";
 
 const instagramUrl: string = process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "";
 const instagramHref: string = instagramUrl;
+const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "";
 
 export default function Footer(): React.JSX.Element {
   const [email, setEmail] = useState<string>("");
@@ -287,7 +288,7 @@ export default function Footer(): React.JSX.Element {
             <div className="flex space-x-2 text-sm text-neutral-500">
               <p>Hecho por</p>
               <Link
-                href="https://github.com/usuario/repositorio"
+                href={githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange-500"
